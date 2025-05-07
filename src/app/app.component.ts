@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from "../components/header/header.component";
+import { LessonComponent } from "../components/lesson/lesson.component";
 
 @Component({
   selector: 'app-root-angular-19',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [HeaderComponent, LessonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'mf-angular-19';
-}
+export class AppComponent {}
