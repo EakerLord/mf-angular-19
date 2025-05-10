@@ -1,15 +1,9 @@
-div {
-  border-radius: 6px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
 button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.5rem;
-  background-color: #343352;
+  background-color: #333552;
   color: #c3b3d1;
   border: none;
   font: inherit;
@@ -23,7 +17,7 @@ button:hover,
 button:active,
 .active {
   background-color: #6577dd;
-  color: #150722;
+  color: #070b22;
 }
 
 img {

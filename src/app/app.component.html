@@ -1,9 +1,24 @@
-<app-header />
+<div class="mf-angular-19-remote-theme">
+  <app-header />
 
-<main>
-  <ul id="users">
-    <li>
-      <app-lesson />
-    </li>
-  </ul>
-</main>
+  <main>
+    <ul id="users">
+      @for (lesson of lessons; track lesson.id) {
+        <li>
+          <app-lesson
+            [lesson]="lesson"
+            [selected]="lesson.id === selectedLessonId"
+            (select)="onSelectLesson($event)" />
+        </li>
+      }
+    </ul>
+
+    @if (selectedLesson) {
+      <app-tasks [lessonId]="selectedLesson.id" [name]="selectedLesson.name" />
+    } @else {
+      <p id="fallback">Select a lesson to see their tasks!</p>
+    }
+
+  </main>
+</div>
+

@@ -1,6 +1,7 @@
-<div>
-  <button>
-    <img [src]="'assets/' + selectedLesson.avatar" [alt]="selectedLesson.name" />
-    <span>{{ selectedLesson.name }}</span>
+<app-card>
+  <button [ngClass]="selected() ? 'active' : ''" (click)="onSelectLesson()">
+    <img [src]="imagePath()" [alt]="lesson().name" />
+    <span>{{ lesson().name }}</span>
   </button>
-</div>
+</app-card>
+
