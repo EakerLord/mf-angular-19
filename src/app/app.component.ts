@@ -10,7 +10,8 @@ import { DUMMY_LESSONS } from "../assets/dummy-lessons"
   standalone: true,
   imports: [HeaderComponent, LessonComponent, TasksComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  hostDirectives: [] // Automatically applies directives from the array whenever the component is used.
 })
 export class AppComponent {
   lessons = DUMMY_LESSONS;

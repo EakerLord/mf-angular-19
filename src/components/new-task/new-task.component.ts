@@ -1,6 +1,7 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, inject, input, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TaskService } from '../tasks/tasks.service';
+import { TaskService } from '../../services/tasks.service';
+
 
 @Component({
   selector: 'app-new-task',
@@ -12,12 +13,11 @@ import { TaskService } from '../tasks/tasks.service';
 export class NewTaskComponent {
   lessonId = input.required<string>();
   close = output<void>();
+  taskService = inject(TaskService);
 
   enteredTitle = signal('');
   enteredSummary = signal('');
   enteredDate = signal('');
-
-  constructor(private taskService: TaskService) {}
 
   onCancel() {
     this.close.emit();

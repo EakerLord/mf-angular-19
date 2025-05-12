@@ -3,6 +3,17 @@
     <h2>{{ task().title }}</h2>
     <time>{{ task().dueDate | date:'fullDate'}}</time>
     <p>{{ task().summary }}</p>
+
+    <!-- Real way -->
+    <!-- <ng-template appAuth="fede">
+      <a href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
+    </ng-template> -->
+
+    <!-- Sintactic sugar way -->
+    <div *appAuth="'fede'">
+      <a href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
+    </div>
+
     <p class="actions">
       <button (click)="onCompleteTask()">Complete</button>
     </p>
