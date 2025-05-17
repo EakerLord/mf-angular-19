@@ -1,8 +1,6 @@
 import { Component, inject, input, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TaskService } from '../../services/tasks.service';
-
-
 @Component({
   selector: 'app-new-task',
   standalone: true,
@@ -24,14 +22,7 @@ export class NewTaskComponent {
   }
 
   onSubmit() {
-    this.taskService.addTask(
-      {
-        title: this.enteredTitle(),
-        summary: this.enteredSummary(),
-        date: this.enteredDate()
-      },
-      this.lessonId()
-    );
+    this.taskService.addTask({title: this.enteredTitle(), summary: this.enteredSummary(), date: this.enteredDate(), status: 'OPEN'}, this.lessonId());
     this.close.emit();
   };
 }

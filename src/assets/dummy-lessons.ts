@@ -11,12 +11,12 @@ export const DUMMY_LESSONS = [
   },
   {
     id: 'l3',
-    name: 'Dependency Injection',
+    name: 'Pipes',
     avatar: 'lesson-3.jpg',
   },
   {
     id: 'l4',
-    name: 'Pipes',
+    name: 'Dependency Injection',
     avatar: 'lesson-4.jpg',
   }
 ];

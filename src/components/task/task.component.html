@@ -1,6 +1,10 @@
 <app-card>
   <article>
-    <h2>{{ task().title }}</h2>
+    <header>
+      <h3>{{ task().title }}</h3>
+      <p>{{ taskStatus() }}</p>
+    </header>
+
     <time>{{ task().dueDate | date:'fullDate'}}</time>
     <p>{{ task().summary }}</p>
 
@@ -11,8 +15,23 @@
       <a href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
     </div>
 
+    <div class="form">
+      <select #status>
+        <option value="open" [selected]="task().status === 'OPEN'">Open</option>
+        <option value="in-progress" [selected]="task().status === 'IN_PROGRESS'">
+          In-Progress
+        </option>
+        <option value="done" [selected]="task().status === 'DONE'">
+          Completed
+        </option>
+      </select>
+      <p>
+        <button class="button" (click)="onChangeTaskStatus(task().id, status.value)">Change Status</button>
+      </p>
+    </div>
+
     <p class="actions">
-      <button (click)="onCompleteTask()">Complete</button>
+      <button type="button" (click)="onCompleteTask()">Complete</button>
     </p>
   </article>
 </app-card>

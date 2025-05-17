@@ -35,3 +35,88 @@ time {
   background-color: #071d74;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
+
+h3 {
+  color: #594b0e;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.15rem 0.25rem;
+  background-color: #594b0e;
+  color: #cdd5f2;
+  border-radius: 4px;
+}
+
+.status-open header p {
+  background-color: #f8d63c;
+}
+
+.status-in-progress header p {
+  background-color: #3ceff8;
+}
+
+.status-done header p {
+  background-color: #c484fc;
+}
+
+.status-open {
+  border-color: #f8d63c;
+  background-color: #2d2a22;
+}
+
+.status-in-progress {
+  border-color: #3ceff8;
+  background-color: #211f1a;
+}
+
+.status-done {
+  border-color: #c484fc;
+  background-color: #39372e;
+}
+
+.form {
+  text-align: right;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+select {
+  font: inherit;
+  padding: 0.15rem;
+  border: none;
+  background-color: #575754;
+  color: #fefefe;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.button {
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: #594b0e;
+  color: #cdd5f2;
+  border-radius: 4px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+.button:hover,
+.button:active {
+  background-color: #cbac21;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}

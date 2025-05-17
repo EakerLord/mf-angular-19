@@ -5,6 +5,14 @@
 <section id="tasks">
   <header>
     <h2>{{ name() }}'s Tasks</h2>
+    <p>
+      <select (change)="onChangeTasksFilter(filter.value)" #filter>
+        <option value="all">All</option>
+        <option value="open">Open</option>
+        <option value="in-progress">In-Progress</option>
+        <option value="done">Completed</option>
+      </select>
+    </p>
     <menu>
       <button (click)="onStartAddTask()">Add Task</button>
     </menu>
