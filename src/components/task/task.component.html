@@ -8,12 +8,32 @@
     <time>{{ task().dueDate | date:'fullDate'}}</time>
     <p>{{ task().summary }}</p>
 
-    <p>This task is like {{ temperature() | temperature:'cel':'fah' }} <|> {{ temperature() | temperature:'fah':'cel' }}</p>
+    @if (task().title === 'Directives') {
+      <!-- Sintactic sugar way of the custom estructural directive -->
+      <div *appAuth="'fede'">
+        <a href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
+      </div>
 
-    <!-- Sintactic sugar way of the custom estructural directive -->
-    <div *appAuth="'fede'">
-      <a href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
-    </div>
+      <!-- Real way of the custom estructural directive -->
+      <!-- <ng-template appAuth="fede">
+        <a href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
+      </ng-template> -->
+    }
+    @if (task().title === 'Pipes') {
+      <p>This task is like {{ temperature() | temperature:'cel':'fah' }} <|> {{ temperature() | temperature:'fah':'cel' }}</p>
+    }
+
+    @if (task().title === 'RxJS') {
+      <p>Observables are values on a stream of data and are great for managing events or streamed data.</p>
+      <p>Signals are values on a container and are great for managind the applicationstate. </p>
+
+
+      <p class="actions">
+        <button type="button" (click)="onClickObservable()">Click!</button>
+        {{clickCount()}} |
+        {{intervalSignal()}}
+      </p>
+    }
 
     <div class="form">
       <select #status>
@@ -35,8 +55,3 @@
     </p>
   </article>
 </app-card>
-
-<!-- Real way of the custom estructural directive -->
-<!-- <ng-template appAuth="fede">
-  <a href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
-</ng-template> -->
