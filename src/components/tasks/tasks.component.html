@@ -1,4 +1,4 @@
-@if (isAddingTask) {
+@if (isAddingTask()) {
   <app-new-task [lessonId]="lessonId()" (close)="onCloseAddTask()" />
 }
 

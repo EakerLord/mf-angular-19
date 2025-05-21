@@ -1,0 +1,40 @@
+dialog {
+  width: 90%;
+  max-width: 60rem;
+  background-color: #a8b7ff;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  padding: 1rem;
+  top: 5rem;
+}
+
+p {
+  font-weight: bold;
+}
+
+.actions {
+  margin: 1rem 0 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  padding: 0.35rem 1.25rem;
+  border-radius: 4px;
+  background-color: #071474;
+}
+
+button[type="button"] {
+  color: #a4b3ff;
+}
+
+button[type="button"]:hover,
+button[type="button"]:active {
+  background-color: #334893;
+}

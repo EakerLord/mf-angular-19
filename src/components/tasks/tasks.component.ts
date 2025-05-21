@@ -10,7 +10,7 @@ import { TaskService } from '../../services/tasks.service';
   styleUrl: './tasks.component.scss'
 })
 export class TasksComponent {
-  isAddingTask = false;
+  isAddingTask = signal(false);
   lessonId = input.required<string>();
   name = input.required<string>();
   private taskService = inject(TaskService);
@@ -34,9 +34,9 @@ export class TasksComponent {
   }
 
   onStartAddTask() {
-    this.isAddingTask = true;
+    this.isAddingTask.set(true);
   }
   onCloseAddTask() {
-    this.isAddingTask = false;
+    this.isAddingTask.set(false);
   }
 }
