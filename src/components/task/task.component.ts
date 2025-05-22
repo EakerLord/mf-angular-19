@@ -45,11 +45,8 @@ export class TaskComponent implements OnInit {
   intervalSignal = toSignal(this.interval$, {initialValue: 0});
 
   ngOnInit(): void {
-    const subscription = this.clickCount$.subscribe({
-      next: (val) => console.log(`Clicked button ${this.clickCount} times.`)
-    });
-
-    this.destroyRef.onDestroy(() => {subscription.unsubscribe()});
+    //const subscription = this.clickCount$.subscribe({ next: (val) => console.log(`Clicked button ${this.clickCount} times.`) });
+    //this.destroyRef.onDestroy(() => {subscription.unsubscribe()});
   }
 
   onClickObservable(){

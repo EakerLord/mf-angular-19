@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
-
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from "../components/header/header.component";
 import { LessonComponent } from "../components/lesson/lesson.component";
 import { TasksComponent } from "../components/tasks/tasks.component";
-
+import { ErrorService } from '../shared/modal-error/error.service';
 import { DUMMY_LESSONS } from "../assets/dummy-data"
+import { ErrorModalComponent } from '../shared/modal-error/error/error-modal.component';
 @Component({
   selector: 'app-root-angular-19',
   standalone: true,
-  imports: [HeaderComponent, LessonComponent, TasksComponent],
+  imports: [HeaderComponent, LessonComponent, TasksComponent, ErrorModalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   hostDirectives: [] // Automatically applies directives from the array whenever the component is used.
@@ -16,6 +16,8 @@ import { DUMMY_LESSONS } from "../assets/dummy-data"
 export class AppComponent {
   lessons = DUMMY_LESSONS;
   selectedLessonId?: string;
+  errorService = inject(ErrorService);
+  error = this.errorService.error;
 
   get selectedLesson() {
     return this.lessons.find((lesson) => lesson.id === this.selectedLessonId)!;

@@ -1,7 +1,7 @@
 dialog {
   width: 90%;
-  max-width: 60rem;
-  background-color: #a8b7ff;
+  max-width: 65rem;
+  background-color: #000937;
   border-radius: 6px;
   border: none;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
@@ -10,12 +10,18 @@ dialog {
   top: 5rem;
 }
 
-p {
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p, h1 {
   font-weight: bold;
+  color: #adc9ff;
 }
 
 .actions {
-  margin: 1rem 0 0;
   display: flex;
   justify-content: flex-end;
   gap: 0.25rem;
@@ -25,7 +31,7 @@ button {
   font: inherit;
   cursor: pointer;
   border: none;
-  padding: 0.35rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   border-radius: 4px;
   background-color: #071474;
 }
