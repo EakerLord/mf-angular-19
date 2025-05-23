@@ -1,11 +1,11 @@
 import { Component, computed, input, output } from '@angular/core';
-import { NgClass } from "@angular/common";
 import { type Lesson } from "./lesson.model";
 import { CardComponent } from "../../shared/card/card.component";
+import { RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-lesson',
   standalone: true,
-  imports: [NgClass, CardComponent],
+  imports: [CardComponent, RouterLink, RouterLinkActive],
   templateUrl: './lesson.component.html',
   styleUrl: './lesson.component.scss'
 })

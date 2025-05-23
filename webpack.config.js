@@ -7,12 +7,10 @@ module.exports = withModuleFederationPlugin({
   name: 'mf-angular-19',
 
   exposes: {
-    "./AppComponent": "./src/app/app.component.ts",
+    './Routes': './src/app/app.routes.ts' // When using router we need to export the routes insted the main component.
   },
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: false }),
-    // ...shareAll({ singleton: true, strictVersion: false, requiredVersion: 'auto' }),
   },
-
 });

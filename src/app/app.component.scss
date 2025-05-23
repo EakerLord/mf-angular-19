@@ -7,6 +7,10 @@
   padding: 1rem;
 }
 
+.mf-angular-19-remote-theme__lessons-tasks {
+  padding: 2% 8%;
+}
+
 main {
   width: 90%;
   max-width: 50rem;
@@ -17,10 +21,13 @@ main {
 }
 
 #users {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
   gap: 0.5rem;
   overflow: auto;
 }
@@ -39,7 +46,7 @@ main {
   }
 
   #users {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   #fallback {

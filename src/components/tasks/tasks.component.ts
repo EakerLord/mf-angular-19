@@ -1,7 +1,8 @@
-import { Component, computed, inject, input, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { TaskComponent } from "../task/task.component";
 import { NewTaskComponent } from "../new-task/new-task.component";
 import { TaskService } from '../../services/tasks.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-tasks',
   standalone: true,
@@ -10,12 +11,13 @@ import { TaskService } from '../../services/tasks.service';
   styleUrl: './tasks.component.scss'
 })
 export class TasksComponent {
-  isAddingTask = signal(false);
-  lessonId = input.required<string>();
-  name = input.required<string>();
+  private route = inject(ActivatedRoute);
   private taskService = inject(TaskService);
+  isAddingTask = signal(false);
   private selectedFilter = signal<string>('all');
 
+  lessonId = signal('');
+  lessonName = computed(() => { return 'Lesson: ' + this.lessonId() }); // TEMP
   selectedLessonTasks = computed(() => {
     switch (this.selectedFilter()) {
       case 'open':
@@ -29,10 +31,16 @@ export class TasksComponent {
     }
   });
 
+  constructor() {
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('lessonId');
+      if (id) this.lessonId.set(id);
+    });
+  }
+
   onChangeTasksFilter(filter: string) {
     this.selectedFilter.set(filter);
   }
-
   onStartAddTask() {
     this.isAddingTask.set(true);
   }

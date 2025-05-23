@@ -1,11 +1,9 @@
 @if (error()) {
   <app-error-modal [title]="'Something went wrong'" [message]="error()"></app-error-modal>
 }
-
 <div class="mf-angular-19-remote-theme">
   <app-header />
-
-  <main>
+  <div>
     <ul id="users">
       @for (lesson of lessons; track lesson.id) {
         <li>
@@ -16,13 +14,13 @@
         </li>
       }
     </ul>
-
-    @if (selectedLesson) {
-      <app-tasks [lessonId]="selectedLesson.id" [name]="selectedLesson.name" />
-    } @else {
-      <p id="fallback">Select a lesson to see their tasks!</p>
-    }
-
-  </main>
+    <div class="mf-angular-19-remote-theme__lessons-tasks">
+      @if (selectedLesson) {
+        <router-outlet />
+      } @else {
+        <p id="fallback">Select a lesson to see their tasks!</p>
+      }
+    </div>
+  </div>
 </div>
 

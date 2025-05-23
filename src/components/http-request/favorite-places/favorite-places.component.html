@@ -7,7 +7,7 @@
   }
   @if (places() && places()!.length > 0) {
     <app-places [places]="places()!" (selectPlace)="onRemovePlace($event)" />
-  } @else if (places()!.length === 0 && !isFetching()) {
+  } @else if (places() && places()!.length === 0 && !isFetching()) {
     <p class="fallback-text">Unfortunately, no places could be found.</p>
   }
 

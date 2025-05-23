@@ -1,5 +1,5 @@
 <app-card>
-  <button [ngClass]="selected() ? 'active' : ''" (click)="onSelectLesson()">
+  <button [routerLink]="['./tasks/', lesson().id]" routerLinkActive="active" (click)="onSelectLesson()" >
     <img [src]="imagePath()" [alt]="lesson().name" />
     <span>{{ lesson().name }}</span>
   </button>
