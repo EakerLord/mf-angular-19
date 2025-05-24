@@ -1,8 +1,9 @@
+import { DUMMY_LESSONS } from "../assets/dummy-data"
+
 import { Component, inject } from '@angular/core';
 import { HeaderComponent } from "../components/header/header.component";
 import { LessonComponent } from "../components/lesson/lesson.component";
 import { ErrorService } from '../shared/modal-error/error.service';
-import { DUMMY_LESSONS } from "../assets/dummy-data"
 import { ErrorModalComponent } from '../shared/modal-error/error/error-modal.component';
 import { RouterOutlet } from '@angular/router';
 @Component({
@@ -15,11 +16,11 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   lessons = DUMMY_LESSONS;
-  selectedLessonId?: string;
+  selectedLessonId? = '';
   errorService = inject(ErrorService);
   error = this.errorService.error;
 
-  get selectedLesson() {
+  get selectedLesson(): { id: string; name: string; avatar: string } {
     return this.lessons.find((lesson) => lesson.id === this.selectedLessonId)!;
   }
 

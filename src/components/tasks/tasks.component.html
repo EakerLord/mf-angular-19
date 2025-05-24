@@ -1,28 +1,34 @@
-@if (isAddingTask()) {
-  <app-new-task [lessonId]="lessonId()" (close)="onCloseAddTask()" />
-}
-
 <section id="tasks">
-  <header>
-    <h2>{{ lessonName() }}'s Tasks</h2>
-    <p>
-      <select (change)="onChangeTasksFilter(filter.value)" #filter>
-        <option value="all">All</option>
-        <option value="open">Open</option>
-        <option value="in-progress">In-Progress</option>
-        <option value="done">Completed</option>
-      </select>
-    </p>
-    <menu>
-      <button (click)="onStartAddTask()">Add Task</button>
-    </menu>
-  </header>
 
-  <ul>
-    @for (task of selectedLessonTasks(); track task.id) {
-      <li>
-        <app-task [task]="task"></app-task>
-      </li>
-    }
-  </ul>
+  <router-outlet></router-outlet>
+
+  @if (!isNewTask()) {
+    <header>
+      <h2>{{ lessonName() }}'s Tasks</h2>
+      <p>
+        <select (change)="onChangeTasksFilter(filter.value)" #filter>
+          <option value="all">All</option>
+          <option value="open">Open</option>
+          <option value="in-progress">In-Progress</option>
+          <option value="done">Completed</option>
+        </select>
+      </p>
+      <menu>
+        <button [routerLink]="['./']" [queryParams]="{ sort: sortSignal() === 'asc' ? 'desc' : 'asc' }">
+          Sort {{ sortSignal() === 'asc' ? 'Descending' : 'Ascending' }}
+        </button>
+        <button [routerLink]="['new']">Add Task</button>
+      </menu>
+    </header>
+
+    <ul>
+      @for (task of selectedLessonTasks(); track task.id) {
+        <li>
+          <app-task [task]="task"></app-task>
+        </li>
+      }
+    </ul>
+  }
 </section>
+
+<!-- <button [routerLink]="['new']" [state]="{ lessonId: lessonId() }">Add Task</button> -->

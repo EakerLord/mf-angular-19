@@ -12,7 +12,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class LessonComponent {
   lesson = input.required<Lesson>();
   selected = input.required<boolean>();
-
   select = output<string>();
 
   imagePath = computed(() => {

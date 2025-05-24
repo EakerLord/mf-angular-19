@@ -79,5 +79,13 @@ export const DUMMY_TASKS = [
     summary: 'Information and examples of HTTP requests, also with observable pattern:',
     dueDate: '2025-12-31',
     status: 'OPEN'
-  }
+  },
+  {
+    id: 't7',
+    lessonId: 'l1',
+    title: 'Data biding S.',
+    summary: 'Full example of data biding comming soon.',
+    dueDate: '2025-12-31',
+    status: 'OPEN'
+  },
 ]

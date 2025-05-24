@@ -4,6 +4,7 @@
 <div class="mf-angular-19-remote-theme">
   <app-header />
   <div>
+    <p id="fallback">Select a lesson to see their tasks:</p>
     <ul id="users">
       @for (lesson of lessons; track lesson.id) {
         <li>
@@ -17,8 +18,6 @@
     <div class="mf-angular-19-remote-theme__lessons-tasks">
       @if (selectedLesson) {
         <router-outlet />
-      } @else {
-        <p id="fallback">Select a lesson to see their tasks!</p>
       }
     </div>
   </div>

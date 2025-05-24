@@ -22,6 +22,7 @@ h2 {
 }
 
 menu {
+  display: flex;
   margin: 0;
   padding: 0;
 }
@@ -29,16 +30,18 @@ menu {
 menu button {
   font: inherit;
   cursor: pointer;
-  background-color: #658ddd;
+  background-color: #032467;
   border-radius: 4px;
   border: none;
   padding: 0.35rem 0.8rem;
   font-size: 0.9rem;
+  color: antiquewhite;
+  margin: 5px;
 }
 
 menu button:hover,
 menu button:active {
-  background-color: #6565dd
+  background-color: #3b6fde
 }
 
 ul {
