@@ -6,11 +6,12 @@ export const routes: Routes = [
   {
     path: '',
     component: AppComponent,
-    children: tasksRoutes
-    // data: { exampleText: 'Example text' }
+    children: tasksRoutes,
+    title: 'Angular 19 Task Manager'
   },
   {
     path: '**',
     loadComponent: () => import('../components/not-found/not-found.component').then(m => m.NotFoundComponent),
+    title: 'Page not found'
   }
 ];

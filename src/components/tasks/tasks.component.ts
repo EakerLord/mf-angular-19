@@ -1,5 +1,5 @@
-import { Component, computed, inject, input, signal } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
+import { Component, computed, inject, signal } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, ResolveFn, Router, RouterLink, RouterOutlet, RouterStateSnapshot } from '@angular/router';
 import { TaskComponent } from "../task/task.component";
 import { TaskService } from '../../services/tasks.service';
 import { DUMMY_LESSONS } from "../../assets/dummy-data"
@@ -17,7 +17,8 @@ export class TasksComponent {
   private taskService = inject(TaskService);
 
   lessonId = signal('');
-  lessonName = computed(() => {return DUMMY_LESSONS.find(lesson => lesson.id === this.lessonId())?.name});
+  lessonName = signal('');
+  private activatedRoute = inject(ActivatedRoute);
 
   sortSignal = signal<'asc' | 'desc'>('desc');
   currentChildRoute = signal('');
@@ -47,16 +48,21 @@ export class TasksComponent {
   }); // Filtering and Sorting the tasks into this computed signal.
 
   constructor() {
+    // Get the lessonName from the route data dinamically.
+    this.activatedRoute.data.subscribe(data => this.lessonName.set(data['lessonName']));
+
     // Get the lessonId from the route params. No destroRef needed because of route it self.
     this.route.paramMap.subscribe(params => {
       const id = params.get('lessonId');
       if (id) this.lessonId.set(id);
     });
+
     // Takes the first child route "new" to render conditionally the add task form using isNewRoute and currentChildRoute signals.
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
       const childPath = this.route.snapshot.firstChild?.routeConfig?.path;
       this.currentChildRoute.set(childPath ?? '');
     });
+
     // Get the sort param from the query params and toogle it depending on the value.
     this.route.queryParamMap.subscribe(params => {
       const sortParam = params.get('sort');
@@ -70,3 +76,13 @@ export class TasksComponent {
     this.selectedFilter.set(filter);
   }
 }
+
+// No subscription needed on ActivatedRouteSnapshot because of route it self.
+export const resolveLessonName: ResolveFn<string> = (activatedRoute: ActivatedRouteSnapshot, routerState: RouterStateSnapshot) => {
+  const lessonId = activatedRoute.paramMap.get('lessonId');
+  return DUMMY_LESSONS.find(lesson => lesson.id === lessonId)?.name || '';
+};
+
+export const resolveTitle: ResolveFn<string> = (activatedRoute: ActivatedRouteSnapshot, routerState: RouterStateSnapshot) => {
+  return resolveLessonName(activatedRoute, routerState) + ' tasks';
+};

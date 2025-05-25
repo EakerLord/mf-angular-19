@@ -1,4 +1,4 @@
-import { Component, computed, DestroyRef, inject, input, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
 import { DatePipe } from "@angular/common";
 import { interval } from "rxjs";
 
@@ -36,7 +36,6 @@ export class TaskComponent implements OnInit {
     }
   });
 
-  private destroyRef = inject(DestroyRef); // An alternative to ngOnDestroy lifecycle.
   // toObservable example
   clickCount = signal(0);
   clickCount$ = toObservable(this.clickCount); // Instead of using effect on the constructor to reset the signal values ​​we can convert it to observable
