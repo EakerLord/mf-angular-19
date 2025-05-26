@@ -29,6 +29,11 @@ export const DUMMY_LESSONS = [
     name: 'HTTP Requests',
     avatar: 'angular-logo.png',
   },
+  {
+    id: 'l7',
+    name: 'Reactive Forms',
+    avatar: 'angular-logo.png',
+  },
 ];
 
 export const DUMMY_TASKS = [
@@ -82,6 +87,14 @@ export const DUMMY_TASKS = [
   },
   {
     id: 't7',
+    lessonId: 'l7',
+    title: 'Reactive Forms',
+    summary: 'Information and examples of Reactive Forms:',
+    dueDate: '2025-12-31',
+    status: 'OPEN'
+  },
+  {
+    id: 't8',
     lessonId: 'l1',
     title: 'Data biding S.',
     summary: 'Full example of data biding comming soon.',

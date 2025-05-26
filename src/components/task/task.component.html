@@ -38,8 +38,12 @@
         <button type="button" (click)="onStartAddRequest()">Click on me to learn more about HTTP requests with spacecraft!</button>
       </p>
     }
+    @if (task().title === 'Reactive Forms') {
+      <app-simple-form />
+      <!-- <app-complex-form /> -->
+    }
 
-    <div class="form">
+    <div class="statusForm">
       <select #status>
         <option value="open" [selected]="task().status === 'OPEN'">Open</option>
         <option value="in-progress" [selected]="task().status === 'IN_PROGRESS'">

@@ -1,11 +1,12 @@
 header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   width: 90%;
   max-width: 50rem;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 1rem auto;
   text-align: center;
   background: linear-gradient(
     to bottom,

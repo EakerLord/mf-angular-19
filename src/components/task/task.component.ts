@@ -1,4 +1,4 @@
-import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
+import { Component, computed, DestroyRef, inject, input, OnInit, signal } from '@angular/core';
 import { DatePipe } from "@angular/common";
 import { interval } from "rxjs";
 
@@ -10,10 +10,15 @@ import { TemperaturePipe } from '../../pipes/temperature.pipe'; // Custom Pipe f
 import { AuthDirective } from '../../directives/auth.directive'; // Estructural self directive
 import { SafeLinkDirective } from '../../directives/safe-link.directive'; // Atribute self directive
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+import { SimpleFormComponent } from '../reactive-forms/simple-form/simple-form.component';
+import { ComplexFormComponent } from '../reactive-forms/complex-form/complex-form.component';
+
 @Component({
   selector: 'app-task',
   standalone: true,
-  imports: [CardComponent, DatePipe, TemperaturePipe, SafeLinkDirective, AuthDirective, NewRequestComponent],
+  imports: [
+    CardComponent, DatePipe, TemperaturePipe, SafeLinkDirective, AuthDirective, NewRequestComponent, SimpleFormComponent, ComplexFormComponent
+  ],
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss',
   hostDirectives: [] // Automatically applies directives from the array whenever the component is used.
@@ -21,8 +26,7 @@ import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 export class TaskComponent implements OnInit {
   task = input.required<Task>();
   private taskService = inject(TaskService);
-  temperature = signal(39); // Variable needed for the temperature Pipe.
-  isAddingRequest = signal(false); // To show the http request component.
+  private destrotRef = inject(DestroyRef);
   taskStatus = computed(() => {
     switch (this.task().status) {
       case 'OPEN':
@@ -36,17 +40,20 @@ export class TaskComponent implements OnInit {
     }
   });
 
-  // toObservable example
+  // Pipes: Variable needed for the temperature Pipe.
+  temperature = signal(39);
+
+  // HTTP Requests: To show the http request component.
+  isAddingRequest = signal(false);
+
+  // RxJS: toObservable example
   clickCount = signal(0);
   clickCount$ = toObservable(this.clickCount); // Instead of using effect on the constructor to reset the signal values ​​we can convert it to observable
-  // toSignal example
+  // RxJS:  toSignal example
   interval$ = interval(1000);
   intervalSignal = toSignal(this.interval$, {initialValue: 0});
 
-  ngOnInit(): void {
-    //const subscription = this.clickCount$.subscribe({ next: (val) => console.log(`Clicked button ${this.clickCount} times.`) });
-    //this.destroyRef.onDestroy(() => {subscription.unsubscribe()});
-  }
+  ngOnInit(): void {}
 
   onClickObservable(){
     this.clickCount.update(prevCount => prevCount + 1);

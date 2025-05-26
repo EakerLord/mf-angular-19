@@ -6,10 +6,12 @@ article {
 
 h2 {
   margin: 0;
+  color: rgb(228, 233, 250);
 }
 
 p {
   font-weight: bold;
+  color: rgb(228, 233, 250);
 }
 
 time {
@@ -89,7 +91,7 @@ header p {
   background-color: #39372e;
 }
 
-.form {
+.statusForm {
   text-align: right;
   display: flex;
   gap: 1rem;
