@@ -1,65 +1,125 @@
 <app-card>
   <article>
     <header>
-      <h3>{{ task().title }}</h3>
-      <p>{{ taskStatus() }}</p>
+      <span>
+        <h3>{{ task().title }}</h3>
+        <p>{{ taskStatus() }}</p>
+      </span>
+      <div class="statusForm">
+        <select #status>
+          <option value="open" [selected]="task().status === 'OPEN'">Open</option>
+          <option value="in-progress" [selected]="task().status === 'IN_PROGRESS'">
+            In-Progress
+          </option>
+          <option value="done" [selected]="task().status === 'DONE'">
+            Completed
+          </option>
+        </select>
+        <p>
+          <button class="button" (click)="onChangeTaskStatus(task().id, status.value)">Change Status</button>
+        </p>
+      </div>
+      <p class="actions"><button type="button" (click)="onCompleteTask()">Complete</button></p>
     </header>
 
     <time>{{ task().dueDate | date:'fullDate'}}</time>
     <p>{{ task().summary }}</p>
 
+    @if (task().title === 'Data biding') {
+      <ul>
+        <li><p ngNonBindable>One-way: Interpolation uses: {{ expresion }}</p></li>
+        <li><p ngNonBindable>One-way: Property binding uses: [src]="imageUrl"</p></li>
+        <li><p ngNonBindable>One-way: Event binding uses: (click)="onClick()"</p></li>
+        <li><p ngNonBindable>Two-way: Biding uses: [(ngModel)]="username" </p></li>
+      </ul>
+    }
     @if (task().title === 'Directives') {
       <!-- Sintactic sugar way of the custom estructural directive -->
       <div *appAuth="'fede'">
-        <a href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
+        <ul><li>
+          <a href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
+        </li></ul>
       </div>
-
       <!-- Real way of the custom estructural directive -->
       <!-- <ng-template appAuth="fede">
         <a href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
       </ng-template> -->
     }
     @if (task().title === 'Pipes') {
-      <p>This task is like {{ temperature() | temperature:'cel':'fah' }} <|> {{ temperature() | temperature:'fah':'cel' }}</p>
+      <ul><li><p>Custom pipe: {{ temperature() | temperature:'cel':'fah' }} <|> {{ temperature() | temperature:'fah':'cel' }}</p></li></ul>
+      <ul><li><p>In build pipe: <time>{{ task().dueDate | date:'fullDate'}}</time></p></li></ul>
+    }
+    @if (task().title === 'Dependency Injection') {
+      <ul>
+        <li><p>Angular has an Injector that manages dependencies declared as providers.If a component or service needs another class, Angular
+         looks for that class in the injection tree, creates it (if necessary), and delivers it.</p></li>
+         <li><p>Any class marked with the &#64;Injectable() decorator can be a dependency.</p></li>
+         <li>
+          <p>Angular allows you to control the scope of the injected instance:</p>
+          <ul>
+            <li><p>providedIn: 'root': Global singleton, available throughout the application and Only one instance.</p></li>
+            <li><p>providedIn: 'platform' (Advanced): Available across the entire platform, even beyond multiple Angular apps on the same page.</p></li>
+            <li><p>providedIn: 'any': A new instance for each lazy-loaded module and useful for isolating services between modules.</p></li>
+            <li><p>providedIn: 'self' / SkipSelf (advanced): Controls which level of the Angular injector to resolve the dependency and used in
+              conjunction with &#64;Optional, &#64;Self, &#64;SkipSelf, etc.</p></li>
+          </ul>
+        </li>
+         <li><p>In addition to providedIn, Angular also allows you to declare providers in various places: &#64;Injectable( providedIn: 'root' ),
+           providers: [] in a component, providers: [] in a module and Injector.create()</p></li>
+          <li><p>Manual or advanced injection: Injecting custom tokens, injecting values ​​(useValue), Injecting concrete classes (useClass) and
+        Injecting factories (useFactory)</p></li>
+      </ul>
     }
     @if (task().title === 'RxJS') {
-      <p>Observables are values on a stream of data and are great for managing events or streamed data.</p>
-      <p>Signals are values on a container and are great for managind the applicationstate. </p>
-
+      <ul>
+        <li><p>Observables are values on a stream of data and are great for managing events or streamed data.</p></li>
+        <li><p>Signals are values on a container and are great for managind the applicationstate. </p></li>
+        <li><p>This is the example of an buld in observable: {{intervalSignal()}}</p></li>
+        <li><p>This is the example of an custom observable by clicking the button: {{clickCount()}}</p></li>
+      </ul>
       <p class="actions">
-        <button type="button" (click)="onClickObservable()">Click to increment the signal converted into observable!</button> {{clickCount()}} | {{intervalSignal()}}
+        <button type="button" (click)="onClickObservable()">Click to increment the signal converted into observable!</button>
       </p>
     }
     @if (task().title === 'HTTP Requests') {
+      <ul>
+        <li>
+          <p>HTTP Requests in Angular allow your application to communicate with external servers to send or receive data, such as:</p>
+          <ul>
+            <li><p>Retrieving information from a REST API, Submitting forms, Saving data to a database, Authentication, etc. </p></li>
+          </ul>
+        </li>
+        <li>
+          <p>Types of HTTP Requests:</p>
+          <ul>
+            <li><p>GET: Obtains data from the server. Used to read information, such as a list of users or products.</p></li>
+            <li><p>POST: Sends data to the server. Used to create new resources (for example, registering a user).</p></li>
+            <li><p>PUT: Completely replaces an existing resource. Used when you want to update an entire object.</p></li>
+            <li><p>PATCH: Partially updates a resource. Use it when you only want to change some fields of the object.</p></li>
+            <li><p>DELETE: Deletes a resource from the server.</p></li>
+          </ul>
+        </li>
+      </ul>
       @if (isAddingRequest()) {
         <app-new-request (close)="onCloseAddRequest()" />
       }
       <p class="actions">
-        <button type="button" (click)="onStartAddRequest()">Click on me to learn more about HTTP requests with spacecraft!</button>
+        <button type="button" (click)="onStartAddRequest()">Click on me to learn more about HTTP requests with images!</button>
       </p>
     }
     @if (task().title === 'Reactive Forms') {
-      <app-simple-form />
-      <!-- <app-complex-form /> -->
+      <span class="button-container">
+        <p class="actions">
+          <button type="button" (click)="onShowSimpleForm()">Click to show the simple form</button>
+        </p>
+        <p class="actions">
+          <button type="button" (click)="onShowComplexForm()">Click to show the complex form</button>
+        </p>
+      </span>
+      <span class="form-container">
+        @if (isShowingSimpleForm()) {<app-simple-form />}
+        @if (isShowingComplexForm()) {<app-complex-form />}
+      </span>
     }
-
-    <div class="statusForm">
-      <select #status>
-        <option value="open" [selected]="task().status === 'OPEN'">Open</option>
-        <option value="in-progress" [selected]="task().status === 'IN_PROGRESS'">
-          In-Progress
-        </option>
-        <option value="done" [selected]="task().status === 'DONE'">
-          Completed
-        </option>
-      </select>
-      <p>
-        <button class="button" (click)="onChangeTaskStatus(task().id, status.value)">Change Status</button>
-      </p>
-    </div>
-
-    <p class="actions">
-      <button type="button" (click)="onCompleteTask()">Complete</button>
-    </p>
   </article>
 </app-card>

@@ -41,7 +41,7 @@ export const DUMMY_TASKS = [
     id: 't1',
     lessonId: 'l1',
     title: 'Data biding',
-    summary: 'Full example of data biding comming soon.',
+    summary: 'It is the mechanism that allows synchronizing data between the model (component.ts) and the view (template.html):',
     dueDate: '2025-12-31',
     status: 'OPEN'
   },
@@ -57,7 +57,7 @@ export const DUMMY_TASKS = [
     id: 't3',
     lessonId: 'l3',
     title: 'Pipes',
-    summary: 'Example of the inbuild DatePipe and a custom pipe named "temperature" that can accept up to two configuration attributes:',
+    summary: 'Example of the inbuild "DatePipe" and a custom pipe named "temperature" that can accept up to two configuration attributes:',
     dueDate: '2025-12-31',
     status: 'IN_PROGRESS'
   },
@@ -65,7 +65,7 @@ export const DUMMY_TASKS = [
     id: 't4',
     lessonId: 'l4',
     title: 'Dependency Injection',
-    summary: 'Full example of Dependency Injection comming soon.',
+    summary: 'It is a design pattern that allows you to automatically provide instances of classes (dependencies) that other objects (such as components or services) need to function, without having to create them directly.',
     dueDate: '2025-12-31',
     status: 'OPEN'
   },
@@ -89,15 +89,7 @@ export const DUMMY_TASKS = [
     id: 't7',
     lessonId: 'l7',
     title: 'Reactive Forms',
-    summary: 'Information and examples of Reactive Forms:',
-    dueDate: '2025-12-31',
-    status: 'OPEN'
-  },
-  {
-    id: 't8',
-    lessonId: 'l1',
-    title: 'Data biding S.',
-    summary: 'Full example of data biding comming soon.',
+    summary: 'Practical example of a form with the implementation of: ngSubmit, ngModel, required, #XXXX="ngModel", conditional rendering and conditional classes:',
     dueDate: '2025-12-31',
     status: 'OPEN'
   },

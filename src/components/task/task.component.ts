@@ -26,7 +26,6 @@ import { ComplexFormComponent } from '../reactive-forms/complex-form/complex-for
 export class TaskComponent implements OnInit {
   task = input.required<Task>();
   private taskService = inject(TaskService);
-  private destrotRef = inject(DestroyRef);
   taskStatus = computed(() => {
     switch (this.task().status) {
       case 'OPEN':
@@ -45,6 +44,10 @@ export class TaskComponent implements OnInit {
 
   // HTTP Requests: To show the http request component.
   isAddingRequest = signal(false);
+
+  // Reactive Forms: To show the simple or complex form component.
+  isShowingSimpleForm = signal(false);
+  isShowingComplexForm = signal(false);
 
   // RxJS: toObservable example
   clickCount = signal(0);
@@ -87,5 +90,14 @@ export class TaskComponent implements OnInit {
   }
   onCloseAddRequest() {
     this.isAddingRequest.set(false);
+  }
+  // Open and close the simple or complex form component.
+  onShowSimpleForm() {
+    this.isShowingSimpleForm.set(true);
+    this.isShowingComplexForm.set(false);
+  }
+  onShowComplexForm() {
+    this.isShowingSimpleForm.set(false);
+    this.isShowingComplexForm.set(true);
   }
 }

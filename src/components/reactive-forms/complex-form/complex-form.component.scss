@@ -9,12 +9,15 @@ p, legend {
 }
 
 form {
-  width: 90%;
   max-width: 40rem;
   padding: 2rem;
   background: linear-gradient(180deg, #070b3d, #23263b);
   border-radius: 8px;
   box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+  width: 600px;
 }
 
 .control,
@@ -23,6 +26,7 @@ fieldset {
 }
 
 .control.no-margin {
+  margin-right: 5%;
   margin-bottom: 0;
 }
 

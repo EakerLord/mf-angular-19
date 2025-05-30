@@ -11,15 +11,6 @@
   padding: 2% 15%;
 }
 
-main {
-  width: 90%;
-  max-width: 50rem;
-  margin: 2.5rem auto;
-  display: grid;
-  grid-auto-flow: row;
-  gap: 2rem;
-}
-
 #users {
   display: flex;
   flex-direction: column;

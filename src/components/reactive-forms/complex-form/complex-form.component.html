@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form class="container" [formGroup]="form" (ngSubmit)="onSubmit()">
 
   @if (form.invalid && form.touched) {
     <p class="control-error">Invalid form - please check your input data.</p>

@@ -11,7 +11,7 @@ h2 {
 
 p {
   font-weight: bold;
-  color: rgb(228, 233, 250);
+  color: #04207f;
 }
 
 time {
@@ -45,13 +45,20 @@ time {
 h3 {
   color: #594b0e;
   margin: 0;
+  margin-right: 2%;
 }
 
 header {
   display: flex;
+  justify-content: space-between;
   gap: 0.5rem;
   align-items: center;
   margin-bottom: 0.5rem;
+}
+
+header span {
+  display: flex;
+  width: 60%;
 }
 
 header p {
@@ -109,6 +116,13 @@ select {
   font-size: 0.75rem;
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1%;
+}
+
 .button {
   font: inherit;
   font-size: 0.9rem;
@@ -125,4 +139,10 @@ select {
 .button:active {
   background-color: #cbac21;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
 }
