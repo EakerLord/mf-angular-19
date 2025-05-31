@@ -2,16 +2,19 @@
   <app-error-modal [title]="'Something went wrong'" [message]="error()"></app-error-modal>
 }
 <div class="mf-angular-19-remote-theme">
-  <app-header />
+  <app-header></app-header>
   <div>
-    <p id="fallback">Select a lesson to see their tasks:</p>
-    <ul id="users">
+    <p class="mf-angular-19-remote-theme__fallback">
+      Select a lesson to see their tasks:
+    </p>
+    <ul class="mf-angular-19-remote-theme__users">
       @for (lesson of lessons; track lesson.id) {
         <li>
           <app-lesson
             [lesson]="lesson"
             [selected]="lesson.id === selectedLessonId"
-            (select)="onSelectLesson($event)" />
+            (select)="onSelectLesson($event)">
+          </app-lesson>
         </li>
       }
     </ul>

@@ -1,12 +1,13 @@
-<ul>
+<ul class="places-list">
   @for (place of places(); track place.id) {
-    <li class="place-item">
-      <button (click)="onSelectPlace(place)">
+    <li class="places-list__item">
+      <button class="places-list__button" (click)="onSelectPlace(place)">
         <img
+          class="places-list__image"
           [src]="'http://localhost:3000/' + place.image.src"
           [alt]="place.image.alt"
         />
-        <h3>{{ place.title }}</h3>
+        <h3 class="places-list__title">{{ place.title }}</h3>
       </button>
     </li>
   }

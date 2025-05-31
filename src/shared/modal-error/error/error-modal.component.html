@@ -1,10 +1,10 @@
 <app-modal>
-  <div class="error">
-    <h2>{{ title() }}</h2>
-    <p>{{ message() }}</p>
+  <div class="modal-error">
+    <h2 class="modal-error__title">{{ title() }}</h2>
+    <p class="modal-error__message">{{ message() }}</p>
 
-    <div class="confirmation-actions">
-      <button class="button" (click)="onClearError()">Okay</button>
+    <div class="modal-error__actions">
+      <button class="modal-error__button" (click)="onClearError()">Okay</button>
     </div>
   </div>
 </app-modal>

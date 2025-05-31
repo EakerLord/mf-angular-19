@@ -1,7 +1,15 @@
 <app-card>
-  <button [routerLink]="['./tasks/', lesson().id]" routerLinkActive="active" (click)="onSelectLesson()" >
-    <img [src]="imagePath()" [alt]="lesson().name" />
-    <span>{{ lesson().name }}</span>
+  <button
+    class="lesson-card__button"
+    [routerLink]="['./tasks/', lesson().id]"
+    routerLinkActive="lesson-card__button--active"
+    (click)="onSelectLesson()"
+  >
+    <img
+      class="lesson-card__image"
+      [src]="imagePath()"
+      [alt]="lesson().name"
+    />
+    <span class="lesson-card__name">{{ lesson().name }}</span>
   </button>
 </app-card>
-

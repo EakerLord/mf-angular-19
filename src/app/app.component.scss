@@ -5,30 +5,28 @@
   color: #ede8f7;
   min-height: 90vh;
   padding: 1rem;
-}
 
-.mf-angular-19-remote-theme__lessons-tasks {
-  padding: 2% 15%;
-}
+  &__lessons-tasks {
+    padding: 2% 15%;
+  }
+  &__users {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-#users {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 0.5rem;
-  overflow: auto;
-}
-
-#fallback {
-  font-weight: bold;
-  font-size: 1.15rem;
-  margin: 0;
-  text-align: center;
-  padding: 1% 1% 2% 1%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+    overflow: auto;
+  }
+  &__fallback {
+    font-weight: bold;
+    font-size: 1.15rem;
+    margin: 0;
+    text-align: center;
+    padding: 1% 1% 2% 1%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -36,12 +34,10 @@
     margin: 4rem auto;
     grid-template-columns: 1fr 3fr;
   }
-
-  #users {
+  .mf-angular-19-remote-theme__users {
     flex-direction: row;
   }
-
-  #fallback {
+  .mf-angular-19-remote-theme__fallback {
     font-size: 1.5rem;
     text-align: center;
   }

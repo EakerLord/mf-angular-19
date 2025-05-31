@@ -1,4 +1,4 @@
-import { Component, computed, DestroyRef, inject, input, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
 import { DatePipe } from "@angular/common";
 import { interval } from "rxjs";
 
@@ -12,7 +12,6 @@ import { SafeLinkDirective } from '../../directives/safe-link.directive'; // Atr
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { SimpleFormComponent } from '../reactive-forms/simple-form/simple-form.component';
 import { ComplexFormComponent } from '../reactive-forms/complex-form/complex-form.component';
-
 @Component({
   selector: 'app-task',
   standalone: true,

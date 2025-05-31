@@ -1,60 +1,65 @@
-h2 {
-  margin: 0;
-  color: #c2c9e1;
-}
+.add-task-form {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  &__title {
+    margin: 0;
+    margin-bottom: 1rem;
+    color: #c2c9e1;
+  }
+  &__group {
+    margin-bottom: 1rem;
+  }
+  &__label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #9aa5c0;
+    margin-bottom: 0.25rem;
+  }
+  &__control {
+    width: 100%;
+    font: inherit;
+    padding: 0.15rem 0.25rem;
+    border-radius: 4px;
+    border: 1px solid #9aa4c0;
+    background-color: #c2c4e1;
+    margin-bottom: 0.5rem;
+  }
+  &__actions {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.25rem;
+  }
+  &__button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    padding: 0.35rem 1.25rem;
+    border-radius: 4px;
+    background-color: transparent;
 
-label {
-  display: block;
-  font-weight: bold;
-  font-size: 0.85rem;
-  color: #9aa5c0;
-}
-
-input,
-textarea {
-  width: 100%;
-  font: inherit;
-  padding: 0.15rem 0.25rem;
-  border-radius: 4px;
-  border: 1px solid #9aa4c0;
-  background-color: #c2c4e1;
-}
-
-.actions {
-  margin: 1rem 0 0;
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.25rem;
-}
-
-button {
-  font: inherit;
-  cursor: pointer;
-  border: none;
-  padding: 0.35rem 1.25rem;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-button[type="button"] {
-  color: #adb3cf;
-}
-
-button[type="button"]:hover,
-button[type="button"]:active {
-  color: #c2cae1;
-}
-
-button[type="submit"] {
-  background-color: #737fca;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-
-button[type="submit"]:hover,
-button[type="submit"]:active {
-  background-color: #5c80ce;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+    &--cancel {
+      color: #adb3cf;
+      &:hover,
+      &:active {
+        color: #c2cae1;
+      }
+    }
+    &--submit {
+      background-color: #737fca;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      &:hover,
+      &:active {
+        background-color: #5c80ce;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {

@@ -1,4 +1,4 @@
-button {
+.lesson-card__button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -11,23 +11,23 @@ button {
   width: 100%;
   min-width: 10rem;
   text-align: left;
+
+  &:hover,
+  &:active,
+  &--active {
+    background-color: #6577dd;
+    color: #070b22;
+  }
 }
 
-button:hover,
-button:active,
-.active {
-  background-color: #6577dd;
-  color: #070b22;
-}
-
-img {
+.lesson-card__image {
   width: 2rem;
   object-fit: contain;
   border-radius: 50%;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
-span {
+.lesson-card__name {
   margin: 0;
   padding: 0;
   font-size: 0.8rem;

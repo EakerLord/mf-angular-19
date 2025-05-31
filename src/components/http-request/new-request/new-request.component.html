@@ -1,12 +1,14 @@
-<dialog open>
-  <header>
-    <h1>PlacePicker</h1>
-    <p class="actions">
-      <button type="button" (click)="onCancel()">Close HTTP request</button>
+<dialog open class="place-picker">
+  <header class="place-picker__header">
+    <h1 class="place-picker__title">PlacePicker</h1>
+    <p class="place-picker__actions">
+      <button type="button" class="place-picker__button" (click)="onCancel()">Close HTTP request</button>
     </p>
   </header>
-  <p> Create your personal collection of places you would like to visit or you have visited.</p>
-  <main>
+  <p class="place-picker__description">
+    Create your personal collection of places you would like to visit or you have visited.
+  </p>
+  <main class="place-picker__main">
     <app-favorite-places />
     <app-available-places />
   </main>
