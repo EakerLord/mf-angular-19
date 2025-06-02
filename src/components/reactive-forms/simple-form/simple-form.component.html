@@ -12,7 +12,7 @@
       <input class="login-form__control" id="password" type="password" formControlName="password" />
     </div>
 
-    <button class="login-form__button" type="submit">Login</button>
+    <button class="login-form__button" type="submit" [disabled]="form.invalid">Login</button>
   </div>
 
   @if (emailIsValid) {

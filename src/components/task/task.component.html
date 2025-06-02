@@ -30,15 +30,28 @@
       </ul>
     }
     @if (task().title === 'Directives') {
-      <div *appAuth="'fede'">
-        <ul><li>
-          <a class="task-card__summary" href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
-        </li></ul>
-      </div>
+      <ul>
+        <li><p class="task-card__summary">Structural directives: Modify the structure of the DOM, adding or removing elements.</p></li>
+        <li><p class="task-card__summary">Attribute directives: Change the appearance or behavior of an element, such as modifying styles or attributes.</p></li>
+        <li><p class="task-card__summary">Components: These are directives with their own template, that is, they combine logic and view, and are the basis of any Angular application.</p></li>
+        <li>
+          <div *appAuth="'fede'">
+            <p class="task-card__summary">
+              Example of a structural directive called "*appAuth" and an attribute directive called "appSafeLink":
+              <a class="task-card__summary" href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
+            </p>
+          </div>
+        </li>
+      </ul>
     }
     @if (task().title === 'Pipes') {
-      <ul><li><p class="task-card__summary">Custom pipe: {{ temperature() | temperature:'cel':'fah' }} <|> {{ temperature() | temperature:'fah':'cel' }}</p></li></ul>
-      <ul><li><p class="task-card__summary">In build pipe: <time class="task-card__date">{{ task().dueDate | date:'fullDate'}}</time></p></li></ul>
+      <ul>
+        <li><p class="task-card__summary">Example of the inbuild "DatePipe" and a custom pipe named "temperature" that can accept up to two configuration attributes:</p></li>
+        <ul>
+          <li><p class="task-card__summary">Custom pipe: {{ temperature() | temperature:'cel':'fah' }} <|> {{ temperature() | temperature:'fah':'cel' }}</p></li>
+          <li><p class="task-card__summary">In build pipe: <time class="task-card__date">{{ task().dueDate | date:'fullDate'}}</time></p></li>
+        </ul>
+      </ul>
     }
     @if (task().title === 'Dependency Injection') {
       <ul>
@@ -97,6 +110,26 @@
       <p class="task-card__actions">
         <button type="button" class="task-card__button" (click)="onStartAddRequest()">Click on me to learn more about HTTP requests with images!</button>
       </p>
+    }
+    @if (task().title === 'Routes') {
+      <ul>
+        <li>
+          <p class="task-card__summary">Guards types</p>
+          <ul>
+            <li><p class="task-card__summary">CanMatch: Decides whether a route can be used by the router before it is even evaluated whether it can be activated or loaded.</p></li>
+            <li><p class="task-card__summary">CanActivate: Determines whether a route can be activated. This is useful for protecting routes that should only be accessible to authenticated users or those with certain permissions.</p></li>
+            <li><p class="task-card__summary">CanDeactivate: Controls whether a user can exit a route. The most typical example is unsaved data.</p></li>
+            <li><p class="task-card__summary">CanLoad: Prevents a lazy-loaded module from loading if certain conditions are not met.</p></li>
+          </ul>
+        </li>
+        <li>
+          <p class="task-card__summary">Data types in the guards</p>
+          <ul>
+            <li><p class="task-card__summary">data: Allows you to associate custom static information with a route.</p></li>
+            <li><p class="task-card__summary">resolve: Allows you to obtain necessary data before a route is activated. Ensures that the information is available before displaying the associated component.</p></li>
+          </ul>
+        </li>
+      </ul>
     }
     @if (task().title === 'Reactive Forms') {
       <span class="task-card__button-container">

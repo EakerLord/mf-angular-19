@@ -31,6 +31,11 @@ export const DUMMY_LESSONS = [
   },
   {
     id: 'l7',
+    name: 'Routes',
+    avatar: 'angular-logo.png',
+  },
+  {
+    id: 'l8',
     name: 'Reactive Forms',
     avatar: 'angular-logo.png',
   },
@@ -49,7 +54,7 @@ export const DUMMY_TASKS = [
     id: 't2',
     lessonId: 'l2',
     title: 'Directives',
-    summary: 'Example of a structural directive called "*appAuth" and an attribute directive called "appSafeLink":',
+    summary: 'Special classes that allow you to modify the behavior, appearance or structure of the elements in the DOM of an application.',
     dueDate: '2025-12-31',
     status: 'DONE'
   },
@@ -57,7 +62,7 @@ export const DUMMY_TASKS = [
     id: 't3',
     lessonId: 'l3',
     title: 'Pipes',
-    summary: 'Example of the inbuild "DatePipe" and a custom pipe named "temperature" that can accept up to two configuration attributes:',
+    summary: 'Tools that allow you to transform and format data directly in HTML templates, without modifying the original value in the component.',
     dueDate: '2025-12-31',
     status: 'IN_PROGRESS'
   },
@@ -88,6 +93,14 @@ export const DUMMY_TASKS = [
   {
     id: 't7',
     lessonId: 'l7',
+    title: 'Routes',
+    summary: 'Information and examples in code of routing ans its complements:',
+    dueDate: '2025-12-31',
+    status: 'OPEN'
+  },
+    {
+    id: 't8',
+    lessonId: 'l8',
     title: 'Reactive Forms',
     summary: 'Practical example of a form with the implementation of: ngSubmit, ngModel, required, #XXXX="ngModel", conditional rendering and conditional classes:',
     dueDate: '2025-12-31',

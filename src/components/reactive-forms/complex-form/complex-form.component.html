@@ -124,6 +124,6 @@
 
   <div class="signup-form__actions">
     <button type="reset" class="signup-form__button signup-form__button--flat" (click)="onReset()">Reset</button>
-    <button type="submit"class="signup-form__button">Sign up</button>
+    <button type="submit"class="signup-form__button" [disabled]="form.invalid">Sign up</button>
   </div>
 </form>

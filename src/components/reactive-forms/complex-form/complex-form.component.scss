@@ -26,7 +26,6 @@ hr {
   &__fieldset {
     margin: 0.5rem 0;
   }
-
   &__row {
     margin: 0.5rem 0;
     display: flex;
@@ -38,7 +37,6 @@ hr {
       flex: 1;
     }
   }
-
   &__label {
     display: block;
     font-size: 0.8rem;
@@ -47,7 +45,6 @@ hr {
     text-transform: uppercase;
     font-weight: bold;
   }
-
   &__control {
     display: block;
     width: 100%;
@@ -64,7 +61,6 @@ hr {
       border-color: #f84e2c;
     }
   }
-
   &__control[type="checkbox"] {
     display: inline-block;
     width: auto;
@@ -75,7 +71,6 @@ hr {
     background-color: transparent;
     color: #d9e2f1;
   }
-
   &__error {
     display: flex;
     flex-wrap: wrap;
@@ -85,13 +80,11 @@ hr {
     height: 1.5rem;
     margin-bottom: 1rem;
   }
-
   &__actions {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
   }
-
   &__button {
     font: inherit;
     font-size: 0.9rem;
@@ -120,13 +113,15 @@ hr {
       }
     }
   }
+  &__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
-  // Error visual para labels de campos inválidos
   &__group:has(.ng-invalid.ng-touched.ng-dirty) .signup-form__label,
   [formgroupname].ng-invalid.ng-touched.ng-dirty .signup-form__label {
     color: #f98b75;
   }
-  // Error visual para controles inválidos
   &__control.ng-invalid.ng-touched.ng-dirty,
   [formgroupname].ng-invalid.ng-touched.ng-dirty .signup-form__control {
     background-color: #fbdcd6;
