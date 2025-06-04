@@ -5,7 +5,7 @@ import { Task } from './task.model';
 import { TaskService } from '../../services/tasks/tasks.service';
 import { CardComponent } from '../../shared/card/card.component';
 import { DatePipe } from '@angular/common';
-import { TemperaturePipe } from '../../pipes/temperature.pipe';
+import { TemperaturePipe } from '../../pipes/temperature/temperature.pipe';
 import { SafeLinkDirective } from '../../directives/safe-link/safe-link.directive';
 import { AuthDirective } from '../../directives/auth/auth.directive';
 import { NewRequestComponent } from '../http-request/new-request/new-request.component';
