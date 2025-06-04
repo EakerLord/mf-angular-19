@@ -5,7 +5,7 @@ import type { PlacesService } from 'host/PlacesService';
 import { Place } from '../place.model';
 import { PlacesComponent } from '../places/places.component';
 import { PlacesContainerComponent } from '../places-container/places-container.component';
-import { ErrorService } from '../../../shared/modal-error/error.service';
+import { ErrorService } from '../../../shared/modal-error/service/error.service';
 @Component({
   selector: 'app-available-places',
   standalone: true,

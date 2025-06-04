@@ -5,10 +5,10 @@ import { interval } from "rxjs";
 import { type Task, type TaskStatus } from "./task.model";
 import { CardComponent } from "../../shared/card/card.component";
 import { NewRequestComponent } from "../http-request/new-request/new-request.component";
-import { TaskService } from '../../services/tasks.service';
-import { TemperaturePipe } from '../../pipes/temperature.pipe'; // Custom Pipe for temperature
-import { AuthDirective } from '../../directives/auth.directive'; // Estructural self directive
-import { SafeLinkDirective } from '../../directives/safe-link.directive'; // Atribute self directive
+import { TaskService } from '../../services/tasks/tasks.service';
+import { TemperaturePipe } from '../../pipes/temperature/temperature.pipe'; // Custom Pipe for temperature
+import { AuthDirective } from '../../directives/auth/auth.directive'; // Estructural self directive
+import { SafeLinkDirective } from '../../directives/safe-link/safe-link.directive'; // Atribute self directive
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { SimpleFormComponent } from '../reactive-forms/simple-form/simple-form.component';
 import { ComplexFormComponent } from '../reactive-forms/complex-form/complex-form.component';

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NewTaskComponent } from './new-task.component';
 import { FormsModule } from '@angular/forms';
 import { provideRouter } from '@angular/router';
-import { TaskService } from '../../services/tasks.service';
+import { TaskService } from '../../services/tasks/tasks.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 class MockTaskService {

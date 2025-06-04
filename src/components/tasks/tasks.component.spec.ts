@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { TasksComponent } from './tasks.component';
-import { TaskService } from '../../services/tasks.service';
+import { TaskService } from '../../services/tasks/tasks.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { of, Subject, BehaviorSubject } from 'rxjs';
 import { By } from '@angular/platform-browser';

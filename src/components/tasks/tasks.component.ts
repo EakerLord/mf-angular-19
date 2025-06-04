@@ -1,7 +1,7 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, ResolveFn, Router, RouterLink, RouterOutlet, RouterStateSnapshot } from '@angular/router';
 import { TaskComponent } from "../task/task.component";
-import { TaskService } from '../../services/tasks.service';
+import { TaskService } from '../../services/tasks/tasks.service';
 import { DUMMY_LESSONS } from "../../assets/dummy-data"
 import { filter } from 'rxjs';
 @Component({

@@ -1,5 +1,5 @@
 import { Directive, effect, inject, input, TemplateRef, ViewContainerRef } from '@angular/core';
-import { TaskService } from '../services/tasks.service';
+import { TaskService } from '../../services/tasks/tasks.service';
 
 @Directive({
   selector: '[appAuth]',

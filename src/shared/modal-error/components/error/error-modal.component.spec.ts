@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { ErrorModalComponent } from './error-modal.component';
-import { ErrorService } from '../error.service';
+import { ErrorService } from '../../service/error.service';
 
 @Component({
   selector: 'app-modal',

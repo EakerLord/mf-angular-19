@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { TaskService } from './tasks.service';
-import { DUMMY_TASKS } from '../assets/dummy-data';
-import { TaskStatus } from '../components/task/task.model';
+import { DUMMY_TASKS } from '../../assets/dummy-data';
+import { TaskStatus } from '../../components/task/task.model';
 
 describe('TaskService', () => {
   let service: TaskService;

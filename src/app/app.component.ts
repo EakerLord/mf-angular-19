@@ -3,8 +3,8 @@ import { DUMMY_LESSONS } from "../assets/dummy-data"
 import { Component, inject } from '@angular/core';
 import { HeaderComponent } from "../components/header/header.component";
 import { LessonComponent } from "../components/lesson/lesson.component";
-import { ErrorService } from '../shared/modal-error/error.service';
-import { ErrorModalComponent } from '../shared/modal-error/error/error-modal.component';
+import { ErrorService } from '../shared/modal-error/service/error.service';
+import { ErrorModalComponent } from '../shared/modal-error/components/error/error-modal.component';
 import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root-angular-19',

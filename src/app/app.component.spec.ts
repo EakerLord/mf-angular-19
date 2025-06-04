@@ -2,8 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { LessonComponent } from '../components/lesson/lesson.component';
-import { ErrorModalComponent } from '../shared/modal-error/error/error-modal.component';
-import { ErrorService } from '../shared/modal-error/error.service';
+import { ErrorModalComponent } from '../shared/modal-error/components/error/error-modal.component';
+import { ErrorService } from '../shared/modal-error/service/error.service';
 import { provideRouter } from '@angular/router';
 
 // Dummy data for testing

@@ -1,7 +1,7 @@
 import { Component, effect, inject, output, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink, Router} from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { TaskService } from '../../services/tasks.service';
+import { TaskService } from '../../services/tasks/tasks.service';
 @Component({
   selector: 'app-new-task',
   standalone: true,
