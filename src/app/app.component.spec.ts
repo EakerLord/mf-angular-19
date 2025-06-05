@@ -54,7 +54,7 @@ describe('AppComponent', () => {
 
   it('should display the fallback message', () => {
     const fallback = fixture.nativeElement.querySelector('.mf-angular-19-remote-theme__fallback');
-    expect(fallback.textContent).toContain('Select a lesson to see their tasks');
+    expect(fallback.textContent).toContain('Select a lesson to see their tasks, but be aware because you have a 3% chance of a cursed guard blocking your way');
   });
 
   it('should update selectedLessonId when onSelectLesson is called', () => {

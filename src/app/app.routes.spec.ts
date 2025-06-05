@@ -1,5 +1,5 @@
 import { TestBed, fakeAsync, tick } from '@angular/core/testing';
-import { Router } from '@angular/router';
+import { RedirectCommand, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
@@ -13,6 +13,8 @@ class DummyComponent {}
 
 @Component({ standalone: true, template: '' })
 class MockNotFoundComponent {}
+
+const mockDummyCanMatch = jasmine.createSpy('dummyCanMatch').and.returnValue(true);
 
 const testRoutes = routes.map(route => {
   if (route.path === '**') {
@@ -53,9 +55,11 @@ describe('App Routing', () => {
 
   childPaths.forEach(path => {
     it(`should navigate to child route: ${path}`, fakeAsync(() => {
-      router.navigate([path]);
+      spyOn(Math, 'random').and.returnValue(0.3);
+      mockDummyCanMatch.and.returnValue(true);
+      router.navigate([`tasks/123/${path}`]);
       tick();
-      expect(location.path()).toBe(`/${path}`);
+      expect(location.path()).toBe(`/tasks/123/${path}`);
     }));
   });
 
@@ -63,5 +67,14 @@ describe('App Routing', () => {
     router.navigate(['/unknownpath']);
     tick(500);
     expect(location.path()).toBe('/unknownpath');
+  }));
+
+  it('should redirect to /a19 when guard blocks access', fakeAsync(() => {
+    spyOn(Math, 'random').and.returnValue(0.99);
+    const urlTree = router.parseUrl('/a19');
+    mockDummyCanMatch.and.returnValue(new RedirectCommand(urlTree));
+    router.navigate(['tasks/123']);
+    tick();
+    expect(location.path()).toBe('/a19');
   }));
 });
