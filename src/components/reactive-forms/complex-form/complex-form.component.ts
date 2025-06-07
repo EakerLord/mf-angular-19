@@ -10,17 +10,6 @@ function mustMatch(control: AbstractControl) {
   return null;
 }
 
-function genericMustMatch(controlName1: string, controlName2: string) {
-  return (control: AbstractControl) => {
-    const control1 = control.get(controlName1);
-    const control2 = control.get(controlName2);
-    if (control1?.value !== control2?.value) {
-      return { mustMatch: true };
-    }
-    return null;
-  };
-}
-
 @Component({
   selector: 'app-complex-form',
   standalone: true,

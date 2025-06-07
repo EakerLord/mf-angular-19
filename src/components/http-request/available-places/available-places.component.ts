@@ -1,11 +1,12 @@
 import { Component, DestroyRef, inject, OnInit, signal, runInInjectionContext, EnvironmentInjector, Type } from '@angular/core';
-import { loadRemoteModule } from '@angular-architects/module-federation';
+import { mfWrapperForTesting } from '../../../shared/mf-wrapper-test';
 import { RemoteServicesRegistry } from '../../../shared/remote-services.registry';
 import type { PlacesService } from 'host/PlacesService';
 import { Place } from '../place.model';
 import { PlacesComponent } from '../places/places.component';
 import { PlacesContainerComponent } from '../places-container/places-container.component';
 import { ErrorService } from '../../../shared/modal-error/service/error.service';
+
 @Component({
   selector: 'app-available-places',
   standalone: true,
@@ -28,7 +29,7 @@ export class AvailablePlacesComponent implements OnInit {
     this.isFetching.set(true);
     try {
 // -- Load in runtime the host service instance via loadRemoteModule from remoteEntry.js ------------------------------------------------
-      const hostServiceModule = await loadRemoteModule(
+      const hostServiceModule = await mfWrapperForTesting.loadRemoteModule(
         { type: 'module', remoteEntry: 'http://localhost:4200/remoteEntry.js', exposedModule: './PlacesService' }
       );
 // -- runInInjectionContext allows to instance localy the host service via EnvironmentInjector  -----------------------------------------

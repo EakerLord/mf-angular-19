@@ -11,6 +11,7 @@ import { AuthDirective } from '../../directives/auth/auth.directive';
 import { NewRequestComponent } from '../http-request/new-request/new-request.component';
 import { SimpleFormComponent } from '../reactive-forms/simple-form/simple-form.component';
 import { ComplexFormComponent } from '../reactive-forms/complex-form/complex-form.component';
+import { startWith, Subscription } from 'rxjs';
 
 const MOCK_TASK: Task = {
   id: '1',
@@ -126,26 +127,11 @@ describe('TaskComponent', () => {
     expect(dateElem.textContent).toContain(new DatePipe('en-US').transform(MOCK_TASK.dueDate, 'fullDate'));
   });
 
-// it('should increment clickCount and update clickCount$', (done) => {
-//   const taskComponent = fixture.debugElement.children[0].componentInstance as TaskComponent;
-//   let emissionCount = 0;
-//   let latestValue = 0;
+  it('should increment clickCount signal', () => {
+    const taskComponent = fixture.debugElement.children[0].componentInstance as TaskComponent;
+    expect(taskComponent.clickCount()).toBe(0);
 
-//   const sub = taskComponent.clickCount$.subscribe(val => {
-//     latestValue = val;
-//     emissionCount++;
-//     if (emissionCount === 1) {
-//       expect(latestValue).toBe(0);
-//       taskComponent.onClickObservable();
-
-//       Promise.resolve().then(() => {
-//         // Espera el siguiente microtask
-//       });
-//     } else if (emissionCount === 2) {
-//       expect(latestValue).toBe(1);
-//       sub.unsubscribe();
-//       done();
-//     }
-//   });
-// });
+    taskComponent.onClickObservable();
+    expect(taskComponent.clickCount()).toBe(1);
+  });
 });
