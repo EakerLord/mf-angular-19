@@ -1,0 +1,677 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mf-angular-19 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">mf-angular-19 documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ComplexFormComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/components/reactive-forms/complex-form/complex-form.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-complex-form</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>ReactiveFormsModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./complex-form.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./complex-form.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#form" >form</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#onReset" >onReset</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onReset"></a>
+                    <span class="name">
+                        <span ><b>onReset</b></span>
+                        <a href="#onReset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onReset()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/components/reactive-forms/complex-form/complex-form.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/components/reactive-forms/complex-form/complex-form.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="form"></a>
+                    <span class="name">
+                        <span ><b>form</b></span>
+                        <a href="#form"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({
+    email: new FormControl(&#x27;&#x27;, {validators: [Validators.required, Validators.email]}),
+    passwords: new FormGroup({
+      password: new FormControl(&#x27;&#x27;, {validators: [Validators.required, Validators.minLength(6)]}),
+      confirmPassword: new FormControl(&#x27;&#x27;, {validators: [Validators.required, Validators.minLength(6)]}),
+    }, {validators: [mustMatch]}),
+    firstName: new FormControl(&#x27;&#x27;, {validators: [Validators.required]}),
+    lastName: new FormControl(&#x27;&#x27;, {validators: [Validators.required]}),
+    address: new FormGroup({
+      street: new FormControl(&#x27;&#x27;, {validators: [Validators.required]}),
+      number: new FormControl(&#x27;&#x27;, {validators: [Validators.required]}),
+      postalCode: new FormControl(&#x27;&#x27;, {validators: [Validators.required]}),
+      city: new FormControl(&#x27;&#x27;, {validators: [Validators.required]}),
+    }),
+    role: new FormControl&lt;&#x27;student&#x27; | &#x27;teacher&#x27; | &#x27;employee&#x27; | &#x27;founder&#x27; | &#x27;other&#x27;&gt;(&#x27;student&#x27;, {validators: [Validators.required]}),
+    source: new FormArray([
+      new FormControl(false),
+      new FormControl(false),
+      new FormControl(false),
+    ]),
+    terms: new FormControl(false, {validators: [Validators.required]}),
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/components/reactive-forms/complex-form/complex-form.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { AbstractControl, FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from &#x27;@angular/forms&#x27;;
+
+function mustMatch(control: AbstractControl) {
+  const password &#x3D; control.get(&#x27;password&#x27;);
+  const confirmPassword &#x3D; control.get(&#x27;confirmPassword&#x27;);
+  if (password?.value !&#x3D;&#x3D; confirmPassword?.value) {
+    return { mustMatch: true };
+  }
+  return null;
+}
+
+@Component({
+  selector: &#x27;app-complex-form&#x27;,
+  standalone: true,
+  imports: [ReactiveFormsModule],
+  templateUrl: &#x27;./complex-form.component.html&#x27;,
+  styleUrl: &#x27;./complex-form.component.scss&#x27;
+})
+export class ComplexFormComponent {
+  form &#x3D; new FormGroup({
+    email: new FormControl(&#x27;&#x27;, {validators: [Validators.required, Validators.email]}),
+    passwords: new FormGroup({
+      password: new FormControl(&#x27;&#x27;, {validators: [Validators.required, Validators.minLength(6)]}),
+      confirmPassword: new FormControl(&#x27;&#x27;, {validators: [Validators.required, Validators.minLength(6)]}),
+    }, {validators: [mustMatch]}),
+    firstName: new FormControl(&#x27;&#x27;, {validators: [Validators.required]}),
+    lastName: new FormControl(&#x27;&#x27;, {validators: [Validators.required]}),
+    address: new FormGroup({
+      street: new FormControl(&#x27;&#x27;, {validators: [Validators.required]}),
+      number: new FormControl(&#x27;&#x27;, {validators: [Validators.required]}),
+      postalCode: new FormControl(&#x27;&#x27;, {validators: [Validators.required]}),
+      city: new FormControl(&#x27;&#x27;, {validators: [Validators.required]}),
+    }),
+    role: new FormControl&lt;&#x27;student&#x27; | &#x27;teacher&#x27; | &#x27;employee&#x27; | &#x27;founder&#x27; | &#x27;other&#x27;&gt;(&#x27;student&#x27;, {validators: [Validators.required]}),
+    source: new FormArray([
+      new FormControl(false),
+      new FormControl(false),
+      new FormControl(false),
+    ]),
+    terms: new FormControl(false, {validators: [Validators.required]}),
+  });
+
+  onSubmit() {
+    if (this.form.invalid) {
+      console.log(this.form.value);
+      return
+    }
+  };
+
+  onReset() {this.form.reset()};
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;form class&#x3D;&quot;signup-form&quot; [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
+
+  @if (form.invalid &amp;&amp; form.touched) {
+    &lt;p class&#x3D;&quot;signup-form__error&quot;&gt;Invalid form - please check your input data.&lt;/p&gt;
+  }
+
+  &lt;h2 class&#x3D;&quot;signup-form__title&quot;&gt;Welcome on board!&lt;/h2&gt;
+  &lt;p class&#x3D;&quot;signup-form__intro&quot;&gt;We just need a little bit of data from you to get you started 🚀&lt;/p&gt;
+
+  &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+    &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;email&quot;&gt;Email&lt;/label&gt;
+    &lt;input class&#x3D;&quot;signup-form__control&quot; id&#x3D;&quot;email&quot; type&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; formControlName&#x3D;&quot;email&quot; /&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;signup-form__row&quot; formGroupName&#x3D;&quot;passwords&quot;&gt;
+    &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+      &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;password&quot;&gt;Password&lt;/label&gt;
+      &lt;input class&#x3D;&quot;signup-form__control&quot; id&#x3D;&quot;password&quot; type&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot; formControlName&#x3D;&quot;password&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+      &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;confirm-password&quot;&gt;Confirm Password&lt;/label&gt;
+      &lt;input class&#x3D;&quot;signup-form__control&quot; id&#x3D;&quot;confirm-password&quot; type&#x3D;&quot;password&quot; name&#x3D;&quot;confirm-password&quot; formControlName&#x3D;&quot;confirmPassword&quot; &gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;hr /&gt;
+  &lt;div&gt;
+    &lt;div class&#x3D;&quot;signup-form__row&quot;&gt;
+      &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+        &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;first-name&quot;&gt;First Name&lt;/label&gt;
+        &lt;input class&#x3D;&quot;signup-form__control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;first-name&quot; name&#x3D;&quot;first-name&quot; formControlName&#x3D;&quot;firstName&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+        &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;last-name&quot;&gt;Last Name&lt;/label&gt;
+        &lt;input class&#x3D;&quot;signup-form__control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;last-name&quot; name&#x3D;&quot;last-name&quot; formControlName&#x3D;&quot;lastName&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;fieldset class&#x3D;&quot;signup-form__fieldset&quot; formGroupName&#x3D;&quot;address&quot;&gt;
+      &lt;legend class&#x3D;&quot;signup-form__legend&quot;&gt;Your Address&lt;/legend&gt;
+      &lt;div class&#x3D;&quot;signup-form__row&quot;&gt;
+        &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+          &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;street&quot;&gt;Street&lt;/label&gt;
+          &lt;input
+            class&#x3D;&quot;signup-form__control&quot;
+            type&#x3D;&quot;text&quot;
+            id&#x3D;&quot;street&quot;
+            name&#x3D;&quot;street&quot;
+            formControlName&#x3D;&quot;street&quot;
+          /&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+          &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;number&quot;&gt;Number&lt;/label&gt;
+          &lt;input
+            class&#x3D;&quot;signup-form__control&quot;
+            type&#x3D;&quot;text&quot;
+            id&#x3D;&quot;number&quot;
+            name&#x3D;&quot;number&quot;
+            formControlName&#x3D;&quot;number&quot;
+          /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;signup-form__row&quot;&gt;
+        &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+          &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;postal-code&quot;&gt;Postal Code&lt;/label&gt;
+          &lt;input
+            class&#x3D;&quot;signup-form__control&quot;
+            type&#x3D;&quot;text&quot;
+            id&#x3D;&quot;postal-code&quot;
+            name&#x3D;&quot;postal-code&quot;
+            formControlName&#x3D;&quot;postalCode&quot;
+          /&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+          &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;city&quot;&gt;City&lt;/label&gt;
+          &lt;input
+            class&#x3D;&quot;signup-form__control&quot;
+            type&#x3D;&quot;text&quot;
+            id&#x3D;&quot;city&quot;
+            name&#x3D;&quot;city&quot;
+            formControlName&#x3D;&quot;city&quot;
+          /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/fieldset&gt;
+  &lt;/div&gt;
+  &lt;hr /&gt;
+  &lt;div class&#x3D;&quot;signup-form__row&quot;&gt;
+    &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+      &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;role&quot;&gt;What best describes your role?&lt;/label&gt;
+      &lt;select class&#x3D;&quot;signup-form__control&quot; id&#x3D;&quot;role&quot; name&#x3D;&quot;role&quot; formControlName&#x3D;&quot;role&quot; &gt;
+        &lt;option value&#x3D;&quot;student&quot;&gt;Student&lt;/option&gt;
+        &lt;option value&#x3D;&quot;teacher&quot;&gt;Teacher&lt;/option&gt;
+        &lt;option value&#x3D;&quot;employee&quot;&gt;Employee&lt;/option&gt;
+        &lt;option value&#x3D;&quot;founder&quot;&gt;Founder&lt;/option&gt;
+        &lt;option value&#x3D;&quot;other&quot;&gt;Other&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;fieldset class&#x3D;&quot;signup-form__fieldset&quot; formArrayName&#x3D;&quot;source&quot;&gt;
+    &lt;legend class&#x3D;&quot;signup-form__legend&quot;&gt;How did you find us?&lt;/legend&gt;
+    &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+      &lt;input class&#x3D;&quot;signup-form__control&quot; type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;google&quot; name&#x3D;&quot;acquisition&quot; value&#x3D;&quot;google&quot; formArrayName&#x3D;&quot;0&quot; /&gt;
+      &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;google&quot;&gt;Google&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+      &lt;input class&#x3D;&quot;signup-form__control&quot; type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;friend&quot; name&#x3D;&quot;acquisition&quot; value&#x3D;&quot;friend&quot; formArrayName&#x3D;&quot;1&quot; /&gt;
+      &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;friend&quot;&gt;Referred by friend&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+      &lt;input class&#x3D;&quot;signup-form__control&quot; type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;other&quot; name&#x3D;&quot;acquisition&quot; value&#x3D;&quot;other&quot; formArrayName&#x3D;&quot;2&quot; /&gt;
+      &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;other&quot;&gt;Other&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+
+  &lt;div class&#x3D;&quot;signup-form__row&quot;&gt;
+    &lt;div class&#x3D;&quot;signup-form__group&quot;&gt;
+      &lt;label class&#x3D;&quot;signup-form__label&quot; for&#x3D;&quot;terms-and-conditions&quot;&gt;
+        &lt;input class&#x3D;&quot;signup-form__control&quot; type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;terms-and-conditions&quot; ame&#x3D;&quot;terms&quot; formControlName&#x3D;&quot;terms&quot; /&gt;
+        I agree to the terms and conditions
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;signup-form__actions&quot;&gt;
+    &lt;button type&#x3D;&quot;reset&quot; class&#x3D;&quot;signup-form__button signup-form__button--flat&quot; (click)&#x3D;&quot;onReset()&quot;&gt;Reset&lt;/button&gt;
+    &lt;button type&#x3D;&quot;submit&quot;class&#x3D;&quot;signup-form__button&quot; [disabled]&#x3D;&quot;form.invalid&quot;&gt;Sign up&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><form class="signup-form" [formGroup]="form" (ngSubmit)="onSubmit()">  @if (form.invalid && form.touched) {    <p class="signup-form__error">Invalid form - please check your input data.</p>  }  <h2 class="signup-form__title">Welcome on board!</h2>  <p class="signup-form__intro">We just need a little bit of data from you to get you started 🚀</p>  <div class="signup-form__group">    <label class="signup-form__label" for="email">Email</label>    <input class="signup-form__control" id="email" type="email" name="email" formControlName="email" />  </div>  <div class="signup-form__row" formGroupName="passwords">    <div class="signup-form__group">      <label class="signup-form__label" for="password">Password</label>      <input class="signup-form__control" id="password" type="password" name="password" formControlName="password" />    </div>    <div class="signup-form__group">      <label class="signup-form__label" for="confirm-password">Confirm Password</label>      <input class="signup-form__control" id="confirm-password" type="password" name="confirm-password" formControlName="confirmPassword" >    </div>  </div>  <hr />  <div>    <div class="signup-form__row">      <div class="signup-form__group">        <label class="signup-form__label" for="first-name">First Name</label>        <input class="signup-form__control" type="text" id="first-name" name="first-name" formControlName="firstName" />      </div>      <div class="signup-form__group">        <label class="signup-form__label" for="last-name">Last Name</label>        <input class="signup-form__control" type="text" id="last-name" name="last-name" formControlName="lastName" />      </div>    </div>    <fieldset class="signup-form__fieldset" formGroupName="address">      <legend class="signup-form__legend">Your Address</legend>      <div class="signup-form__row">        <div class="signup-form__group">          <label class="signup-form__label" for="street">Street</label>          <input            class="signup-form__control"            type="text"            id="street"            name="street"            formControlName="street"          />        </div>        <div class="signup-form__group">          <label class="signup-form__label" for="number">Number</label>          <input            class="signup-form__control"            type="text"            id="number"            name="number"            formControlName="number"          />        </div>      </div>      <div class="signup-form__row">        <div class="signup-form__group">          <label class="signup-form__label" for="postal-code">Postal Code</label>          <input            class="signup-form__control"            type="text"            id="postal-code"            name="postal-code"            formControlName="postalCode"          />        </div>        <div class="signup-form__group">          <label class="signup-form__label" for="city">City</label>          <input            class="signup-form__control"            type="text"            id="city"            name="city"            formControlName="city"          />        </div>      </div>    </fieldset>  </div>  <hr />  <div class="signup-form__row">    <div class="signup-form__group">      <label class="signup-form__label" for="role">What best describes your role?</label>      <select class="signup-form__control" id="role" name="role" formControlName="role" >        <option value="student">Student</option>        <option value="teacher">Teacher</option>        <option value="employee">Employee</option>        <option value="founder">Founder</option>        <option value="other">Other</option>      </select>    </div>  </div>  <fieldset class="signup-form__fieldset" formArrayName="source">    <legend class="signup-form__legend">How did you find us?</legend>    <div class="signup-form__group">      <input class="signup-form__control" type="checkbox" id="google" name="acquisition" value="google" formArrayName="0" />      <label class="signup-form__label" for="google">Google</label>    </div>    <div class="signup-form__group">      <input class="signup-form__control" type="checkbox" id="friend" name="acquisition" value="friend" formArrayName="1" />      <label class="signup-form__label" for="friend">Referred by friend</label>    </div>    <div class="signup-form__group">      <input class="signup-form__control" type="checkbox" id="other" name="acquisition" value="other" formArrayName="2" />      <label class="signup-form__label" for="other">Other</label>    </div>  </fieldset>  <div class="signup-form__row">    <div class="signup-form__group">      <label class="signup-form__label" for="terms-and-conditions">        <input class="signup-form__control" type="checkbox" id="terms-and-conditions" ame="terms" formControlName="terms" />        I agree to the terms and conditions      </label>    </div>  </div>  <div class="signup-form__actions">    <button type="reset" class="signup-form__button signup-form__button--flat" (click)="onReset()">Reset</button>    <button type="submit"class="signup-form__button" [disabled]="form.invalid">Sign up</button>  </div></form></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root-angular-19'},{'name': 'AvailablePlacesComponent', 'selector': 'app-available-places'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ComplexFormComponent', 'selector': 'app-complex-form'},{'name': 'ErrorModalComponent', 'selector': 'app-error-modal'},{'name': 'FavoritePlacesComponent', 'selector': 'app-favorite-places'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LessonComponent', 'selector': 'app-lesson'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NewRequestComponent', 'selector': 'app-new-request'},{'name': 'NewTaskComponent', 'selector': 'app-new-task'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PlacesComponent', 'selector': 'app-places'},{'name': 'PlacesContainerComponent', 'selector': 'app-places-container'},{'name': 'SimpleFormComponent', 'selector': 'app-simple-form'},{'name': 'TaskComponent', 'selector': 'app-task'},{'name': 'TasksComponent', 'selector': 'app-tasks'}];
+    var DIRECTIVES = [{'name': 'AuthDirective', 'selector': '[appAuth]'},{'name': 'SafeLinkDirective', 'selector': 'a[appSafeLink]'}];
+    var ACTUAL_COMPONENT = {'name': 'ComplexFormComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ComplexFormComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

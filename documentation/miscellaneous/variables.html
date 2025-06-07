@@ -1,0 +1,652 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mf-angular-19 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">mf-angular-19 documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#appConfig" title="src/app/app.config.ts" ><b>appConfig</b>&nbsp;&nbsp;&nbsp;(src/.../app.config.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#canLeaveEditPage" title="src/guards/can-leave-edit-page/can-leave-edit-page.guard.ts" ><b>canLeaveEditPage</b>&nbsp;&nbsp;&nbsp;(src/.../can-leave-edit-page.guard.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DUMMY_LESSONS" title="src/assets/dummy-data.ts" ><b>DUMMY_LESSONS</b>&nbsp;&nbsp;&nbsp;(src/.../dummy-data.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DUMMY_TASKS" title="src/assets/dummy-data.ts" ><b>DUMMY_TASKS</b>&nbsp;&nbsp;&nbsp;(src/.../dummy-data.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#dummyCanMatch" title="src/guards/dummy-can-match/dummy-can-match.guard.ts" ><b>dummyCanMatch</b>&nbsp;&nbsp;&nbsp;(src/.../dummy-can-match.guard.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mfWrapperForTesting" title="src/shared/mf-wrapper-test.ts" ><b>mfWrapperForTesting</b>&nbsp;&nbsp;&nbsp;(src/.../mf-wrapper-test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#remoteA19Interceptor" title="src/interceptors/remote-a19-interceptor/remote-a19.interceptor.ts" ><b>remoteA19Interceptor</b>&nbsp;&nbsp;&nbsp;(src/.../remote-a19.interceptor.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#RemoteServicesRegistry" title="src/shared/remote-services.registry.ts" ><b>RemoteServicesRegistry</b>&nbsp;&nbsp;&nbsp;(src/.../remote-services.registry.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#resolveLessonName" title="src/components/tasks/tasks.component.ts" ><b>resolveLessonName</b>&nbsp;&nbsp;&nbsp;(src/.../tasks.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#resolveTitle" title="src/components/tasks/tasks.component.ts" ><b>resolveTitle</b>&nbsp;&nbsp;&nbsp;(src/.../tasks.component.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/app.config.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appConfig"></a>
+                    <span class="name">
+                        <span ><b>appConfig</b></span>
+                        <a href="#appConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ApplicationConfig</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(
+      routes,
+      withComponentInputBinding(),
+      withRouterConfig({ paramsInheritanceStrategy: &#x27;always&#x27; }),
+    ),
+    provideHttpClient(withInterceptors([remoteA19Interceptor]))
+  ]
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/guards/can-leave-edit-page/can-leave-edit-page.guard.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="canLeaveEditPage"></a>
+                    <span class="name">
+                        <span ><b>canLeaveEditPage</b></span>
+                        <a href="#canLeaveEditPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Task.html" target="_self" >CanDeactivateFn&lt;NewTaskComponent&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(component: NewTaskComponent) &#x3D;&gt; {
+  if (
+    component.enteredTitle().length &gt; 0 ||
+    component.enteredSummary().length &gt; 0 ||
+    component.enteredDate().length &gt; 0
+  ) {
+    return confirm(&#x27;Are you sure to leave with unsaved changes?&#x27;);
+  }
+  return true;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/assets/dummy-data.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DUMMY_LESSONS"></a>
+                    <span class="name">
+                        <span ><b>DUMMY_LESSONS</b></span>
+                        <a href="#DUMMY_LESSONS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  {
+    id: &#x27;l1&#x27;,
+    name: &#x27;Data biding&#x27;,
+    avatar: &#x27;angular-logo.png&#x27;,
+  },
+  {
+    id: &#x27;l2&#x27;,
+    name: &#x27;Directives&#x27;,
+    avatar: &#x27;angular-logo.png&#x27;,
+  },
+  {
+    id: &#x27;l3&#x27;,
+    name: &#x27;Pipes&#x27;,
+    avatar: &#x27;angular-logo.png&#x27;,
+  },
+  {
+    id: &#x27;l4&#x27;,
+    name: &#x27;Dependency Injection&#x27;,
+    avatar: &#x27;angular-logo.png&#x27;,
+  },
+  {
+    id: &#x27;l5&#x27;,
+    name: &#x27;Observables - RxJS&#x27;,
+    avatar: &#x27;rxjs.png&#x27;,
+  },
+  {
+    id: &#x27;l6&#x27;,
+    name: &#x27;HTTP Requests&#x27;,
+    avatar: &#x27;angular-logo.png&#x27;,
+  },
+  {
+    id: &#x27;l7&#x27;,
+    name: &#x27;Routes&#x27;,
+    avatar: &#x27;angular-logo.png&#x27;,
+  },
+  {
+    id: &#x27;l8&#x27;,
+    name: &#x27;Reactive Forms&#x27;,
+    avatar: &#x27;angular-logo.png&#x27;,
+  },
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DUMMY_TASKS"></a>
+                    <span class="name">
+                        <span ><b>DUMMY_TASKS</b></span>
+                        <a href="#DUMMY_TASKS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  {
+    id: &#x27;t1&#x27;,
+    lessonId: &#x27;l1&#x27;,
+    title: &#x27;Data biding&#x27;,
+    summary: &#x27;It is the mechanism that allows synchronizing data between the model (component.ts) and the view (template.html):&#x27;,
+    dueDate: &#x27;2025-12-31&#x27;,
+    status: &#x27;OPEN&#x27;
+  },
+  {
+    id: &#x27;t2&#x27;,
+    lessonId: &#x27;l2&#x27;,
+    title: &#x27;Directives&#x27;,
+    summary: &#x27;Special classes that allow you to modify the behavior, appearance or structure of the elements in the DOM of an application.&#x27;,
+    dueDate: &#x27;2025-12-31&#x27;,
+    status: &#x27;DONE&#x27;
+  },
+  {
+    id: &#x27;t3&#x27;,
+    lessonId: &#x27;l3&#x27;,
+    title: &#x27;Pipes&#x27;,
+    summary: &#x27;Tools that allow you to transform and format data directly in HTML templates, without modifying the original value in the component.&#x27;,
+    dueDate: &#x27;2025-12-31&#x27;,
+    status: &#x27;IN_PROGRESS&#x27;
+  },
+  {
+    id: &#x27;t4&#x27;,
+    lessonId: &#x27;l4&#x27;,
+    title: &#x27;Dependency Injection&#x27;,
+    summary: &#x27;It is a design pattern that allows you to automatically provide instances of classes (dependencies) that other objects (such as components or services) need to function, without having to create them directly.&#x27;,
+    dueDate: &#x27;2025-12-31&#x27;,
+    status: &#x27;OPEN&#x27;
+  },
+  {
+    id: &#x27;t5&#x27;,
+    lessonId: &#x27;l5&#x27;,
+    title: &#x27;RxJS&#x27;,
+    summary: &#x27;Information, comparisons and examples of RxJS, observable pattern:&#x27;,
+    dueDate: &#x27;2025-12-31&#x27;,
+    status: &#x27;OPEN&#x27;
+  },
+  {
+    id: &#x27;t6&#x27;,
+    lessonId: &#x27;l6&#x27;,
+    title: &#x27;HTTP Requests&#x27;,
+    summary: &#x27;Information and examples of HTTP requests, also with observable pattern:&#x27;,
+    dueDate: &#x27;2025-12-31&#x27;,
+    status: &#x27;OPEN&#x27;
+  },
+  {
+    id: &#x27;t7&#x27;,
+    lessonId: &#x27;l7&#x27;,
+    title: &#x27;Routes&#x27;,
+    summary: &#x27;Information and examples in code of routing ans its complements:&#x27;,
+    dueDate: &#x27;2025-12-31&#x27;,
+    status: &#x27;OPEN&#x27;
+  },
+    {
+    id: &#x27;t8&#x27;,
+    lessonId: &#x27;l8&#x27;,
+    title: &#x27;Reactive Forms&#x27;,
+    summary: &#x27;Practical example of a form with the implementation of: ngSubmit, ngModel, required, #XXXX&#x3D;&quot;ngModel&quot;, conditional rendering and conditional classes:&#x27;,
+    dueDate: &#x27;2025-12-31&#x27;,
+    status: &#x27;OPEN&#x27;
+  },
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/guards/dummy-can-match/dummy-can-match.guard.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dummyCanMatch"></a>
+                    <span class="name">
+                        <span ><b>dummyCanMatch</b></span>
+                        <a href="#dummyCanMatch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>CanMatchFn</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(route, segments) &#x3D;&gt; {
+  const router &#x3D; inject(Router);
+  const shouldGetAccess &#x3D; Math.random();
+  if (shouldGetAccess &lt; 0.98) return true;
+  alert(&#x27;dummyCanMatch -&gt; You do not have access&#x27;);
+  return new RedirectCommand(router.parseUrl(&#x27;/a19&#x27;));
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/shared/mf-wrapper-test.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mfWrapperForTesting"></a>
+                    <span class="name">
+                        <span ><b>mfWrapperForTesting</b></span>
+                        <a href="#mfWrapperForTesting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ loadRemoteModule: realLoadRemoteModule }</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/interceptors/remote-a19-interceptor/remote-a19.interceptor.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remoteA19Interceptor"></a>
+                    <span class="name">
+                        <span ><b>remoteA19Interceptor</b></span>
+                        <a href="#remoteA19Interceptor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>HttpInterceptorFn</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(req, next) &#x3D;&gt; {
+  const apiHost &#x3D; &#x27;http://localhost:4201&#x27;;
+  let newReq &#x3D; req;
+  if (!req.url.startsWith(&#x27;http&#x27;)) {
+    newReq &#x3D; req.clone({ url: apiHost + req.url });
+  }
+  console.log(&#x27;Intercepted by remoteA19Interceptor&#x27;);
+  return next(newReq);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/shared/remote-services.registry.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="RemoteServicesRegistry"></a>
+                    <span class="name">
+                        <span ><b>RemoteServicesRegistry</b></span>
+                        <a href="#RemoteServicesRegistry"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/components/tasks/tasks.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resolveLessonName"></a>
+                    <span class="name">
+                        <span ><b>resolveLessonName</b></span>
+                        <a href="#resolveLessonName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ResolveFn&lt;string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(activatedRoute: ActivatedRouteSnapshot, routerState: RouterStateSnapshot) &#x3D;&gt; {
+  const lessonId &#x3D; activatedRoute.paramMap.get(&#x27;lessonId&#x27;);
+  return DUMMY_LESSONS.find(lesson &#x3D;&gt; lesson.id &#x3D;&#x3D;&#x3D; lessonId)?.name || &#x27;&#x27;;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resolveTitle"></a>
+                    <span class="name">
+                        <span ><b>resolveTitle</b></span>
+                        <a href="#resolveTitle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ResolveFn&lt;string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(activatedRoute: ActivatedRouteSnapshot, routerState: RouterStateSnapshot) &#x3D;&gt; {
+  return resolveLessonName(activatedRoute, routerState) + &#x27; tasks&#x27;;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

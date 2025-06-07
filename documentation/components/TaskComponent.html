@@ -1,0 +1,1345 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mf-angular-19 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">mf-angular-19 documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TaskComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/components/task/task.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-task</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/CardComponent.html" target="_self" >CardComponent</a></code>
+                            <code>DatePipe</code>
+                            <code>TemperaturePipe</code>
+                                <code><a href="../directives/SafeLinkDirective.html" target="_self" >SafeLinkDirective</a></code>
+                                <code><a href="../directives/AuthDirective.html" target="_self" >AuthDirective</a></code>
+                                <code><a href="../components/NewRequestComponent.html" target="_self" >NewRequestComponent</a></code>
+                                <code><a href="../components/SimpleFormComponent.html" target="_self" >SimpleFormComponent</a></code>
+                                <code><a href="../components/ComplexFormComponent.html" target="_self" >ComplexFormComponent</a></code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./task.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./task.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clickCount" >clickCount</a>
+                            </li>
+                            <li>
+                                <a href="#clickCount$" >clickCount$</a>
+                            </li>
+                            <li>
+                                <a href="#interval$" >interval$</a>
+                            </li>
+                            <li>
+                                <a href="#intervalSignal" >intervalSignal</a>
+                            </li>
+                            <li>
+                                <a href="#isAddingRequest" >isAddingRequest</a>
+                            </li>
+                            <li>
+                                <a href="#isShowingComplexForm" >isShowingComplexForm</a>
+                            </li>
+                            <li>
+                                <a href="#isShowingSimpleForm" >isShowingSimpleForm</a>
+                            </li>
+                            <li>
+                                <a href="#task" >task</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#taskService" >taskService</a>
+                            </li>
+                            <li>
+                                <a href="#taskStatus" >taskStatus</a>
+                            </li>
+                            <li>
+                                <a href="#temperature" >temperature</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onChangeTaskStatus" >onChangeTaskStatus</a>
+                            </li>
+                            <li>
+                                <a href="#onClickObservable" >onClickObservable</a>
+                            </li>
+                            <li>
+                                <a href="#onCloseAddRequest" >onCloseAddRequest</a>
+                            </li>
+                            <li>
+                                <a href="#onCompleteTask" >onCompleteTask</a>
+                            </li>
+                            <li>
+                                <a href="#onShowComplexForm" >onShowComplexForm</a>
+                            </li>
+                            <li>
+                                <a href="#onShowSimpleForm" >onShowSimpleForm</a>
+                            </li>
+                            <li>
+                                <a href="#onStartAddRequest" >onStartAddRequest</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#task" >task</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="task"></a>
+                        <b>task</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Required : </i>&nbsp;<b>true</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/components/task/task.component.ts:26</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="58"
+                                    class="link-to-prism">src/components/task/task.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onChangeTaskStatus"></a>
+                    <span class="name">
+                        <span ><b>onChangeTaskStatus</b></span>
+                        <a href="#onChangeTaskStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onChangeTaskStatus(taskId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, status: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/components/task/task.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>taskId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>status</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClickObservable"></a>
+                    <span class="name">
+                        <span ><b>onClickObservable</b></span>
+                        <a href="#onClickObservable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClickObservable()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="60"
+                                    class="link-to-prism">src/components/task/task.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCloseAddRequest"></a>
+                    <span class="name">
+                        <span ><b>onCloseAddRequest</b></span>
+                        <a href="#onCloseAddRequest"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCloseAddRequest()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="90"
+                                    class="link-to-prism">src/components/task/task.component.ts:90</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCompleteTask"></a>
+                    <span class="name">
+                        <span ><b>onCompleteTask</b></span>
+                        <a href="#onCompleteTask"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCompleteTask()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/components/task/task.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onShowComplexForm"></a>
+                    <span class="name">
+                        <span ><b>onShowComplexForm</b></span>
+                        <a href="#onShowComplexForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onShowComplexForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="98"
+                                    class="link-to-prism">src/components/task/task.component.ts:98</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onShowSimpleForm"></a>
+                    <span class="name">
+                        <span ><b>onShowSimpleForm</b></span>
+                        <a href="#onShowSimpleForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onShowSimpleForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">src/components/task/task.component.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onStartAddRequest"></a>
+                    <span class="name">
+                        <span ><b>onStartAddRequest</b></span>
+                        <a href="#onStartAddRequest"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onStartAddRequest()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="87"
+                                    class="link-to-prism">src/components/task/task.component.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clickCount"></a>
+                    <span class="name">
+                        <span ><b>clickCount</b></span>
+                        <a href="#clickCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(0)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/components/task/task.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clickCount$"></a>
+                    <span class="name">
+                        <span ><b>clickCount$</b></span>
+                        <a href="#clickCount$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>toObservable(this.clickCount)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/components/task/task.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="interval$"></a>
+                    <span class="name">
+                        <span ><b>interval$</b></span>
+                        <a href="#interval$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>interval(1000)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/components/task/task.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="intervalSignal"></a>
+                    <span class="name">
+                        <span ><b>intervalSignal</b></span>
+                        <a href="#intervalSignal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>toSignal(this.interval$, {initialValue: 0})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/components/task/task.component.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAddingRequest"></a>
+                    <span class="name">
+                        <span ><b>isAddingRequest</b></span>
+                        <a href="#isAddingRequest"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/components/task/task.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isShowingComplexForm"></a>
+                    <span class="name">
+                        <span ><b>isShowingComplexForm</b></span>
+                        <a href="#isShowingComplexForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/components/task/task.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isShowingSimpleForm"></a>
+                    <span class="name">
+                        <span ><b>isShowingSimpleForm</b></span>
+                        <a href="#isShowingSimpleForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/components/task/task.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="task"></a>
+                    <span class="name">
+                        <span ><b>task</b></span>
+                        <a href="#task"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/components/task/task.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="taskService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>taskService</b></span>
+                        <a href="#taskService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(TaskService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/components/task/task.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="taskStatus"></a>
+                    <span class="name">
+                        <span ><b>taskStatus</b></span>
+                        <a href="#taskStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>computed(() &#x3D;&gt; {
+    switch (this.task().status) {
+      case &#x27;OPEN&#x27;:
+        return &#x27;Open&#x27;;
+      case &#x27;IN_PROGRESS&#x27;:
+        return &#x27;Working on it&#x27;;
+      case &#x27;DONE&#x27;:
+        return &#x27;Completed&#x27;;
+      default:
+        return &#x27;Open&#x27;;
+    }
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/components/task/task.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="temperature"></a>
+                    <span class="name">
+                        <span ><b>temperature</b></span>
+                        <a href="#temperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(39)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/components/task/task.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, computed, inject, input, OnInit, signal } from &#x27;@angular/core&#x27;;
+import { DatePipe } from &quot;@angular/common&quot;;
+import { interval } from &quot;rxjs&quot;;
+
+import { type Task, type TaskStatus } from &quot;./task.model&quot;;
+import { CardComponent } from &quot;../../shared/card/card.component&quot;;
+import { NewRequestComponent } from &quot;../http-request/new-request/new-request.component&quot;;
+import { TaskService } from &#x27;../../services/tasks/tasks.service&#x27;;
+import { TemperaturePipe } from &#x27;../../pipes/temperature/temperature.pipe&#x27;; // Custom Pipe for temperature
+import { AuthDirective } from &#x27;../../directives/auth/auth.directive&#x27;; // Estructural self directive
+import { SafeLinkDirective } from &#x27;../../directives/safe-link/safe-link.directive&#x27;; // Atribute self directive
+import { toObservable, toSignal } from &#x27;@angular/core/rxjs-interop&#x27;;
+import { SimpleFormComponent } from &#x27;../reactive-forms/simple-form/simple-form.component&#x27;;
+import { ComplexFormComponent } from &#x27;../reactive-forms/complex-form/complex-form.component&#x27;;
+@Component({
+  selector: &#x27;app-task&#x27;,
+  standalone: true,
+  imports: [
+    CardComponent, DatePipe, TemperaturePipe, SafeLinkDirective, AuthDirective, NewRequestComponent, SimpleFormComponent, ComplexFormComponent
+  ],
+  templateUrl: &#x27;./task.component.html&#x27;,
+  styleUrl: &#x27;./task.component.scss&#x27;,
+  hostDirectives: [] // Automatically applies directives from the array whenever the component is used.
+})
+export class TaskComponent implements OnInit {
+  task &#x3D; input.required&lt;Task&gt;();
+  private taskService &#x3D; inject(TaskService);
+  taskStatus &#x3D; computed(() &#x3D;&gt; {
+    switch (this.task().status) {
+      case &#x27;OPEN&#x27;:
+        return &#x27;Open&#x27;;
+      case &#x27;IN_PROGRESS&#x27;:
+        return &#x27;Working on it&#x27;;
+      case &#x27;DONE&#x27;:
+        return &#x27;Completed&#x27;;
+      default:
+        return &#x27;Open&#x27;;
+    }
+  });
+
+  // Pipes: Variable needed for the temperature Pipe.
+  temperature &#x3D; signal(39);
+
+  // HTTP Requests: To show the http request component.
+  isAddingRequest &#x3D; signal(false);
+
+  // Reactive Forms: To show the simple or complex form component.
+  isShowingSimpleForm &#x3D; signal(false);
+  isShowingComplexForm &#x3D; signal(false);
+
+  // RxJS: toObservable example
+  clickCount &#x3D; signal(0);
+  clickCount$ &#x3D; toObservable(this.clickCount); // Instead of using effect on the constructor to reset the signal values ​​we can convert it to observable
+  // RxJS:  toSignal example
+  interval$ &#x3D; interval(1000);
+  intervalSignal &#x3D; toSignal(this.interval$, {initialValue: 0});
+
+  ngOnInit(): void {}
+
+  onClickObservable(){
+    this.clickCount.update(prevCount &#x3D;&gt; prevCount + 1);
+  }
+
+  onChangeTaskStatus(taskId: string, status: string) {
+    let newStatus: TaskStatus &#x3D; &#x27;OPEN&#x27;;
+
+    switch (status) {
+      case &#x27;open&#x27;:
+        newStatus &#x3D; &#x27;OPEN&#x27;;
+        break;
+      case &#x27;in-progress&#x27;:
+        newStatus &#x3D; &#x27;IN_PROGRESS&#x27;;
+        break;
+      case &#x27;done&#x27;:
+        newStatus &#x3D; &#x27;DONE&#x27;;
+        break;
+      default:
+        break;
+    }
+
+    this.taskService.updateTaskStatus(taskId, newStatus);
+  }
+  onCompleteTask() {
+    this.taskService.removeTask(this.task().id);
+  }
+  // Open and close the http request component.
+  onStartAddRequest() {
+    this.isAddingRequest.set(true);
+  }
+  onCloseAddRequest() {
+    this.isAddingRequest.set(false);
+  }
+  // Open and close the simple or complex form component.
+  onShowSimpleForm() {
+    this.isShowingSimpleForm.set(true);
+    this.isShowingComplexForm.set(false);
+  }
+  onShowComplexForm() {
+    this.isShowingSimpleForm.set(false);
+    this.isShowingComplexForm.set(true);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-card&gt;
+  &lt;article class&#x3D;&quot;task-card&quot;&gt;
+    &lt;header class&#x3D;&quot;task-card__header&quot;&gt;
+      &lt;span&gt;
+        &lt;h3 class&#x3D;&quot;task-card__title&quot;&gt;{{ task().title }}&lt;/h3&gt;
+        &lt;p class&#x3D;&quot;task-card__status&quot;&gt;{{ taskStatus() }}&lt;/p&gt;
+      &lt;/span&gt;
+      &lt;div class&#x3D;&quot;task-card__status-form&quot;&gt;
+        &lt;select #status class&#x3D;&quot;task-card__status-select&quot;&gt;
+          &lt;option value&#x3D;&quot;open&quot; [selected]&#x3D;&quot;task().status &#x3D;&#x3D;&#x3D; &#x27;OPEN&#x27;&quot;&gt;Open&lt;/option&gt;
+          &lt;option value&#x3D;&quot;in-progress&quot; [selected]&#x3D;&quot;task().status &#x3D;&#x3D;&#x3D; &#x27;IN_PROGRESS&#x27;&quot;&gt;In-Progress&lt;/option&gt;
+          &lt;option value&#x3D;&quot;done&quot; [selected]&#x3D;&quot;task().status &#x3D;&#x3D;&#x3D; &#x27;DONE&#x27;&quot;&gt;Completed&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;p&gt;
+          &lt;button class&#x3D;&quot;task-card__button&quot; (click)&#x3D;&quot;onChangeTaskStatus(task().id, status.value)&quot;&gt;Change Status&lt;/button&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;p class&#x3D;&quot;task-card__actions&quot;&gt;&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;task-card__button&quot; (click)&#x3D;&quot;onCompleteTask()&quot;&gt;Complete&lt;/button&gt;&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;time class&#x3D;&quot;task-card__date&quot;&gt;{{ task().dueDate | date:&#x27;fullDate&#x27;}}&lt;/time&gt;
+    &lt;p class&#x3D;&quot;task-card__summary&quot;&gt;{{ task().summary }}&lt;/p&gt;
+
+    @if (task().title &#x3D;&#x3D;&#x3D; &#x27;Data biding&#x27;) {
+      &lt;ul&gt;
+        &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot; ngNonBindable&gt;One-way: Interpolation uses: {{ expresion }}&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot; ngNonBindable&gt;One-way: Property binding uses: [src]&#x3D;&quot;imageUrl&quot;&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot; ngNonBindable&gt;One-way: Event binding uses: (click)&#x3D;&quot;onClick()&quot;&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot; ngNonBindable&gt;Two-way: Biding uses: [(ngModel)]&#x3D;&quot;username&quot; &lt;/p&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    }
+    @if (task().title &#x3D;&#x3D;&#x3D; &#x27;Directives&#x27;) {
+      &lt;ul&gt;
+        &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Structural directives: Modify the structure of the DOM, adding or removing elements.&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Attribute directives: Change the appearance or behavior of an element, such as modifying styles or attributes.&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Components: These are directives with their own template, that is, they combine logic and view, and are the basis of any Angular application.&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;
+          &lt;div *appAuth&#x3D;&quot;&#x27;fede&#x27;&quot;&gt;
+            &lt;p class&#x3D;&quot;task-card__summary&quot;&gt;
+              Example of a structural directive called &quot;*appAuth&quot; and an attribute directive called &quot;appSafeLink&quot;:
+              &lt;a class&#x3D;&quot;task-card__summary&quot; href&#x3D;&quot;https://angular.dev/&quot; appSafeLink&#x3D;&quot;/tutorials&quot;&gt;Link to Angular site!&lt;/a&gt;
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    }
+    @if (task().title &#x3D;&#x3D;&#x3D; &#x27;Pipes&#x27;) {
+      &lt;ul&gt;
+        &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Example of the inbuild &quot;DatePipe&quot; and a custom pipe named &quot;temperature&quot; that can accept up to two configuration attributes:&lt;/p&gt;&lt;/li&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Custom pipe: {{ temperature() | temperature:&#x27;cel&#x27;:&#x27;fah&#x27; }} &lt;|&gt; {{ temperature() | temperature:&#x27;fah&#x27;:&#x27;cel&#x27; }}&lt;/p&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;In build pipe: &lt;time class&#x3D;&quot;task-card__date&quot;&gt;{{ task().dueDate | date:&#x27;fullDate&#x27;}}&lt;/time&gt;&lt;/p&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/ul&gt;
+    }
+    @if (task().title &#x3D;&#x3D;&#x3D; &#x27;Dependency Injection&#x27;) {
+      &lt;ul&gt;
+        &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Angular has an Injector that manages dependencies declared as providers.If a component or service needs another class, Angular
+         looks for that class in the injection tree, creates it (if necessary), and delivers it.&lt;/p&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Any class marked with the &amp;#64;Injectable() decorator can be a dependency.&lt;/p&gt;&lt;/li&gt;
+         &lt;li&gt;
+          &lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Angular allows you to control the scope of the injected instance:&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;providedIn: &#x27;root&#x27;: Global singleton, available throughout the application and Only one instance.&lt;/p&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;providedIn: &#x27;platform&#x27; (Advanced): Available across the entire platform, even beyond multiple Angular apps on the same page.&lt;/p&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;providedIn: &#x27;any&#x27;: A new instance for each lazy-loaded module and useful for isolating services between modules.&lt;/p&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;providedIn: &#x27;self&#x27; / SkipSelf (advanced): Controls which level of the Angular injector to resolve the dependency and used in
+              conjunction with &amp;#64;Optional, &amp;#64;Self, &amp;#64;SkipSelf, etc.&lt;/p&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+         &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;In addition to providedIn, Angular also allows you to declare providers in various places: &amp;#64;Injectable( providedIn: &#x27;root&#x27; ),
+           providers: [] in a component, providers: [] in a module and Injector.create()&lt;/p&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Manual or advanced injection: Injecting custom tokens, injecting values ​​(useValue), Injecting concrete classes (useClass) and
+        Injecting factories (useFactory)&lt;/p&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    }
+    @if (task().title &#x3D;&#x3D;&#x3D; &#x27;RxJS&#x27;) {
+      &lt;ul&gt;
+        &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Observables are values on a stream of data and are great for managing events or streamed data.&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Signals are values on a container and are great for managind the applicationstate. &lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;This is the example of an buld in observable: {{intervalSignal()}}&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;This is the example of an custom observable by clicking the button: {{clickCount()}}&lt;/p&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p class&#x3D;&quot;task-card__actions&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;task-card__button&quot; (click)&#x3D;&quot;onClickObservable()&quot;&gt;Click to increment the signal converted into observable!&lt;/button&gt;
+      &lt;/p&gt;
+    }
+    @if (task().title &#x3D;&#x3D;&#x3D; &#x27;HTTP Requests&#x27;) {
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;p class&#x3D;&quot;task-card__summary&quot;&gt;HTTP Requests in Angular allow your application to communicate with external servers to send or receive data, such as:&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Retrieving information from a REST API, Submitting forms, Saving data to a database, Authentication, etc. &lt;/p&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Types of HTTP Requests:&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;GET: Obtains data from the server. Used to read information, such as a list of users or products.&lt;/p&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;POST: Sends data to the server. Used to create new resources (for example, registering a user).&lt;/p&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;PUT: Completely replaces an existing resource. Used when you want to update an entire object.&lt;/p&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;PATCH: Partially updates a resource. Use it when you only want to change some fields of the object.&lt;/p&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;DELETE: Deletes a resource from the server.&lt;/p&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      @if (isAddingRequest()) {
+        &lt;app-new-request (close)&#x3D;&quot;onCloseAddRequest()&quot; /&gt;
+      }
+      &lt;p class&#x3D;&quot;task-card__actions&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;task-card__button&quot; (click)&#x3D;&quot;onStartAddRequest()&quot;&gt;Click on me to learn more about HTTP requests with images!&lt;/button&gt;
+      &lt;/p&gt;
+    }
+    @if (task().title &#x3D;&#x3D;&#x3D; &#x27;Routes&#x27;) {
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Guards types&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;CanMatch: Decides whether a route can be used by the router before it is even evaluated whether it can be activated or loaded.&lt;/p&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;CanActivate: Determines whether a route can be activated. This is useful for protecting routes that should only be accessible to authenticated users or those with certain permissions.&lt;/p&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;CanDeactivate: Controls whether a user can exit a route. The most typical example is unsaved data.&lt;/p&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;CanLoad: Prevents a lazy-loaded module from loading if certain conditions are not met.&lt;/p&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;p class&#x3D;&quot;task-card__summary&quot;&gt;Data types in the guards&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;data: Allows you to associate custom static information with a route.&lt;/p&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;p class&#x3D;&quot;task-card__summary&quot;&gt;resolve: Allows you to obtain necessary data before a route is activated. Ensures that the information is available before displaying the associated component.&lt;/p&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    }
+    @if (task().title &#x3D;&#x3D;&#x3D; &#x27;Reactive Forms&#x27;) {
+      &lt;span class&#x3D;&quot;task-card__button-container&quot;&gt;
+        &lt;p class&#x3D;&quot;task-card__actions&quot;&gt;
+          &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;task-card__button&quot; (click)&#x3D;&quot;onShowSimpleForm()&quot;&gt;Click to show the simple form&lt;/button&gt;
+        &lt;/p&gt;
+        &lt;p class&#x3D;&quot;task-card__actions&quot;&gt;
+          &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;task-card__button&quot; (click)&#x3D;&quot;onShowComplexForm()&quot;&gt;Click to show the complex form&lt;/button&gt;
+        &lt;/p&gt;
+      &lt;/span&gt;
+      &lt;span class&#x3D;&quot;task-card__form-container&quot;&gt;
+        @if (isShowingSimpleForm()) {&lt;app-simple-form /&gt;}
+        @if (isShowingComplexForm()) {&lt;app-complex-form /&gt;}
+      &lt;/span&gt;
+    }
+  &lt;/article&gt;
+&lt;/app-card&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-card>  <article class="task-card">    <header class="task-card__header">      <span>        <h3 class="task-card__title">{{ task().title }}</h3>        <p class="task-card__status">{{ taskStatus() }}</p>      </span>      <div class="task-card__status-form">        <select #status class="task-card__status-select">          <option value="open" [selected]="task().status === \'OPEN\'">Open</option>          <option value="in-progress" [selected]="task().status === \'IN_PROGRESS\'">In-Progress</option>          <option value="done" [selected]="task().status === \'DONE\'">Completed</option>        </select>        <p>          <button class="task-card__button" (click)="onChangeTaskStatus(task().id, status.value)">Change Status</button>        </p>      </div>      <p class="task-card__actions"><button type="button" class="task-card__button" (click)="onCompleteTask()">Complete</button></p>    </header>    <time class="task-card__date">{{ task().dueDate | date:\'fullDate\'}}</time>    <p class="task-card__summary">{{ task().summary }}</p>    @if (task().title === \'Data biding\') {      <ul>        <li><p class="task-card__summary" ngNonBindable>One-way: Interpolation uses: {{ expresion }}</p></li>        <li><p class="task-card__summary" ngNonBindable>One-way: Property binding uses: [src]="imageUrl"</p></li>        <li><p class="task-card__summary" ngNonBindable>One-way: Event binding uses: (click)="onClick()"</p></li>        <li><p class="task-card__summary" ngNonBindable>Two-way: Biding uses: [(ngModel)]="username" </p></li>      </ul>    }    @if (task().title === \'Directives\') {      <ul>        <li><p class="task-card__summary">Structural directives: Modify the structure of the DOM, adding or removing elements.</p></li>        <li><p class="task-card__summary">Attribute directives: Change the appearance or behavior of an element, such as modifying styles or attributes.</p></li>        <li><p class="task-card__summary">Components: These are directives with their own template, that is, they combine logic and view, and are the basis of any Angular application.</p></li>        <li>          <div *appAuth="\'fede\'">            <p class="task-card__summary">              Example of a structural directive called "*appAuth" and an attribute directive called "appSafeLink":              <a class="task-card__summary" href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>            </p>          </div>        </li>      </ul>    }    @if (task().title === \'Pipes\') {      <ul>        <li><p class="task-card__summary">Example of the inbuild "DatePipe" and a custom pipe named "temperature" that can accept up to two configuration attributes:</p></li>        <ul>          <li><p class="task-card__summary">Custom pipe: {{ temperature() | temperature:\'cel\':\'fah\' }} <|> {{ temperature() | temperature:\'fah\':\'cel\' }}</p></li>          <li><p class="task-card__summary">In build pipe: <time class="task-card__date">{{ task().dueDate | date:\'fullDate\'}}</time></p></li>        </ul>      </ul>    }    @if (task().title === \'Dependency Injection\') {      <ul>        <li><p class="task-card__summary">Angular has an Injector that manages dependencies declared as providers.If a component or service needs another class, Angular         looks for that class in the injection tree, creates it (if necessary), and delivers it.</p></li>         <li><p class="task-card__summary">Any class marked with the &#64;Injectable() decorator can be a dependency.</p></li>         <li>          <p class="task-card__summary">Angular allows you to control the scope of the injected instance:</p>          <ul>            <li><p class="task-card__summary">providedIn: \'root\': Global singleton, available throughout the application and Only one instance.</p></li>            <li><p class="task-card__summary">providedIn: \'platform\' (Advanced): Available across the entire platform, even beyond multiple Angular apps on the same page.</p></li>            <li><p class="task-card__summary">providedIn: \'any\': A new instance for each lazy-loaded module and useful for isolating services between modules.</p></li>            <li><p class="task-card__summary">providedIn: \'self\' / SkipSelf (advanced): Controls which level of the Angular injector to resolve the dependency and used in              conjunction with &#64;Optional, &#64;Self, &#64;SkipSelf, etc.</p></li>          </ul>        </li>         <li><p class="task-card__summary">In addition to providedIn, Angular also allows you to declare providers in various places: &#64;Injectable( providedIn: \'root\' ),           providers: [] in a component, providers: [] in a module and Injector.create()</p></li>          <li><p class="task-card__summary">Manual or advanced injection: Injecting custom tokens, injecting values ​​(useValue), Injecting concrete classes (useClass) and        Injecting factories (useFactory)</p></li>      </ul>    }    @if (task().title === \'RxJS\') {      <ul>        <li><p class="task-card__summary">Observables are values on a stream of data and are great for managing events or streamed data.</p></li>        <li><p class="task-card__summary">Signals are values on a container and are great for managind the applicationstate. </p></li>        <li><p class="task-card__summary">This is the example of an buld in observable: {{intervalSignal()}}</p></li>        <li><p class="task-card__summary">This is the example of an custom observable by clicking the button: {{clickCount()}}</p></li>      </ul>      <p class="task-card__actions">        <button type="button" class="task-card__button" (click)="onClickObservable()">Click to increment the signal converted into observable!</button>      </p>    }    @if (task().title === \'HTTP Requests\') {      <ul>        <li>          <p class="task-card__summary">HTTP Requests in Angular allow your application to communicate with external servers to send or receive data, such as:</p>          <ul>            <li><p class="task-card__summary">Retrieving information from a REST API, Submitting forms, Saving data to a database, Authentication, etc. </p></li>          </ul>        </li>        <li>          <p class="task-card__summary">Types of HTTP Requests:</p>          <ul>            <li><p class="task-card__summary">GET: Obtains data from the server. Used to read information, such as a list of users or products.</p></li>            <li><p class="task-card__summary">POST: Sends data to the server. Used to create new resources (for example, registering a user).</p></li>            <li><p class="task-card__summary">PUT: Completely replaces an existing resource. Used when you want to update an entire object.</p></li>            <li><p class="task-card__summary">PATCH: Partially updates a resource. Use it when you only want to change some fields of the object.</p></li>            <li><p class="task-card__summary">DELETE: Deletes a resource from the server.</p></li>          </ul>        </li>      </ul>      @if (isAddingRequest()) {        <app-new-request (close)="onCloseAddRequest()" />      }      <p class="task-card__actions">        <button type="button" class="task-card__button" (click)="onStartAddRequest()">Click on me to learn more about HTTP requests with images!</button>      </p>    }    @if (task().title === \'Routes\') {      <ul>        <li>          <p class="task-card__summary">Guards types</p>          <ul>            <li><p class="task-card__summary">CanMatch: Decides whether a route can be used by the router before it is even evaluated whether it can be activated or loaded.</p></li>            <li><p class="task-card__summary">CanActivate: Determines whether a route can be activated. This is useful for protecting routes that should only be accessible to authenticated users or those with certain permissions.</p></li>            <li><p class="task-card__summary">CanDeactivate: Controls whether a user can exit a route. The most typical example is unsaved data.</p></li>            <li><p class="task-card__summary">CanLoad: Prevents a lazy-loaded module from loading if certain conditions are not met.</p></li>          </ul>        </li>        <li>          <p class="task-card__summary">Data types in the guards</p>          <ul>            <li><p class="task-card__summary">data: Allows you to associate custom static information with a route.</p></li>            <li><p class="task-card__summary">resolve: Allows you to obtain necessary data before a route is activated. Ensures that the information is available before displaying the associated component.</p></li>          </ul>        </li>      </ul>    }    @if (task().title === \'Reactive Forms\') {      <span class="task-card__button-container">        <p class="task-card__actions">          <button type="button" class="task-card__button" (click)="onShowSimpleForm()">Click to show the simple form</button>        </p>        <p class="task-card__actions">          <button type="button" class="task-card__button" (click)="onShowComplexForm()">Click to show the complex form</button>        </p>      </span>      <span class="task-card__form-container">        @if (isShowingSimpleForm()) {<app-simple-form />}        @if (isShowingComplexForm()) {<app-complex-form />}      </span>    }  </article></app-card></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root-angular-19'},{'name': 'AvailablePlacesComponent', 'selector': 'app-available-places'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ComplexFormComponent', 'selector': 'app-complex-form'},{'name': 'ErrorModalComponent', 'selector': 'app-error-modal'},{'name': 'FavoritePlacesComponent', 'selector': 'app-favorite-places'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LessonComponent', 'selector': 'app-lesson'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NewRequestComponent', 'selector': 'app-new-request'},{'name': 'NewTaskComponent', 'selector': 'app-new-task'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PlacesComponent', 'selector': 'app-places'},{'name': 'PlacesContainerComponent', 'selector': 'app-places-container'},{'name': 'SimpleFormComponent', 'selector': 'app-simple-form'},{'name': 'TaskComponent', 'selector': 'app-task'},{'name': 'TasksComponent', 'selector': 'app-tasks'}];
+    var DIRECTIVES = [{'name': 'AuthDirective', 'selector': '[appAuth]'},{'name': 'SafeLinkDirective', 'selector': 'a[appSafeLink]'}];
+    var ACTUAL_COMPONENT = {'name': 'TaskComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TaskComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
