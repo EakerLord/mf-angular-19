@@ -1,10 +1,9 @@
-<app-modal>
+<app-modal role="alertdialog" aria-modal="true" [attr.aria-labelledby]="'modal-error-title'" [attr.aria-describedby]="'modal-error-message'">
   <div class="modal-error">
-    <h2 class="modal-error__title">{{ title() }}</h2>
-    <p class="modal-error__message">{{ message() }}</p>
-
+    <h2 class="modal-error__title" id="modal-error-title">{{ title() }}</h2>
+    <p class="modal-error__message" id="modal-error-message">{{ message() }}</p>
     <div class="modal-error__actions">
-      <button class="modal-error__button" (click)="onClearError()">Okay</button>
+      <button class="modal-error__button" (click)="onClearError()" #okayButton> Okay </button>
     </div>
   </div>
 </app-modal>

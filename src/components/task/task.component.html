@@ -3,19 +3,30 @@
     <header class="task-card__header">
       <span>
         <h3 class="task-card__title">{{ task().title }}</h3>
-        <p class="task-card__status">{{ taskStatus() }}</p>
+        <p class="task-card__status" aria-live="polite">{{ taskStatus() }}</p>
       </span>
       <div class="task-card__status-form">
-        <select #status class="task-card__status-select">
+        <select
+          id="task-status-{{task().id}}"
+          #status
+          class="task-card__status-select"
+        >
           <option value="open" [selected]="task().status === 'OPEN'">Open</option>
           <option value="in-progress" [selected]="task().status === 'IN_PROGRESS'">In-Progress</option>
           <option value="done" [selected]="task().status === 'DONE'">Completed</option>
         </select>
         <p>
-          <button class="task-card__button" (click)="onChangeTaskStatus(task().id, status.value)">Change Status</button>
+          <button class="task-card__button" (click)="onChangeTaskStatus(task().id, status.value)"
+           [attr.aria-label]="'Change status for {{ task().title }}'">
+            Change Status
+          </button>
         </p>
       </div>
-      <p class="task-card__actions"><button type="button" class="task-card__button" (click)="onCompleteTask()">Complete</button></p>
+      <p class="task-card__actions">
+        <button type="button" class="task-card__button" (click)="onCompleteTask()" [attr.aria-label]="'Mark {{ task().title }} as complete'">
+          Complete
+        </button>
+      </p>
     </header>
 
     <time class="task-card__date">{{ task().dueDate | date:'fullDate'}}</time>
@@ -55,34 +66,37 @@
     }
     @if (task().title === 'Dependency Injection') {
       <ul>
-        <li><p class="task-card__summary">Angular has an Injector that manages dependencies declared as providers.If a component or service needs another class, Angular
-         looks for that class in the injection tree, creates it (if necessary), and delivers it.</p></li>
-         <li><p class="task-card__summary">Any class marked with the &#64;Injectable() decorator can be a dependency.</p></li>
-         <li>
+        <li><p class="task-card__summary">Angular has an Injector that manages dependencies declared as providers. If a component or service needs another class, Angular looks for that class in the injection tree, creates it (if necessary), and delivers it.</p></li>
+        <li><p class="task-card__summary">Any class marked with the &#64;Injectable() decorator can be a dependency.</p></li>
+        <li>
           <p class="task-card__summary">Angular allows you to control the scope of the injected instance:</p>
           <ul>
             <li><p class="task-card__summary">providedIn: 'root': Global singleton, available throughout the application and Only one instance.</p></li>
             <li><p class="task-card__summary">providedIn: 'platform' (Advanced): Available across the entire platform, even beyond multiple Angular apps on the same page.</p></li>
             <li><p class="task-card__summary">providedIn: 'any': A new instance for each lazy-loaded module and useful for isolating services between modules.</p></li>
-            <li><p class="task-card__summary">providedIn: 'self' / SkipSelf (advanced): Controls which level of the Angular injector to resolve the dependency and used in
-              conjunction with &#64;Optional, &#64;Self, &#64;SkipSelf, etc.</p></li>
+            <li><p class="task-card__summary">providedIn: 'self' / SkipSelf (advanced): Controls which level of the Angular injector to resolve the dependency and used in conjunction with &#64;Optional, &#64;Self, &#64;SkipSelf, etc.</p></li>
           </ul>
         </li>
-         <li><p class="task-card__summary">In addition to providedIn, Angular also allows you to declare providers in various places: &#64;Injectable( providedIn: 'root' ),
-           providers: [] in a component, providers: [] in a module and Injector.create()</p></li>
-          <li><p class="task-card__summary">Manual or advanced injection: Injecting custom tokens, injecting values ​​(useValue), Injecting concrete classes (useClass) and
-        Injecting factories (useFactory)</p></li>
+        <li><p class="task-card__summary">In addition to providedIn, Angular also allows you to declare providers in various places: &#64;Injectable( providedIn: 'root' ), providers: [] in a component, providers: [] in a module and Injector.create()</p></li>
+        <li><p class="task-card__summary">Manual or advanced injection: Injecting custom tokens, injecting values ​​(useValue), Injecting concrete classes (useClass) and Injecting factories (useFactory)</p></li>
       </ul>
     }
     @if (task().title === 'RxJS') {
       <ul>
         <li><p class="task-card__summary">Observables are values on a stream of data and are great for managing events or streamed data.</p></li>
-        <li><p class="task-card__summary">Signals are values on a container and are great for managind the applicationstate. </p></li>
-        <li><p class="task-card__summary">This is the example of an buld in observable: {{intervalSignal()}}</p></li>
-        <li><p class="task-card__summary">This is the example of an custom observable by clicking the button: {{clickCount()}}</p></li>
+        <li><p class="task-card__summary">Signals are values on a container and are great for managing the application state.</p></li>
+        <li><p class="task-card__summary">This is the example of a built-in observable: {{intervalSignal()}}</p></li>
+        <li><p class="task-card__summary">This is the example of a custom observable by clicking the button: {{clickCount()}}</p></li>
       </ul>
       <p class="task-card__actions">
-        <button type="button" class="task-card__button" (click)="onClickObservable()">Click to increment the signal converted into observable!</button>
+        <button
+          type="button"
+          class="task-card__button"
+          (click)="onClickObservable()"
+          aria-label="Increment observable value"
+        >
+          Click to increment the signal converted into observable!
+        </button>
       </p>
     }
     @if (task().title === 'HTTP Requests') {
@@ -108,7 +122,14 @@
         <app-new-request (close)="onCloseAddRequest()" />
       }
       <p class="task-card__actions">
-        <button type="button" class="task-card__button" (click)="onStartAddRequest()">Click on me to learn more about HTTP requests with images!</button>
+        <button
+          type="button"
+          class="task-card__button"
+          (click)="onStartAddRequest()"
+          aria-label="Learn more about HTTP requests"
+        >
+          Click on me to learn more about HTTP requests with images!
+        </button>
       </p>
     }
     @if (task().title === 'Routes') {
@@ -134,10 +155,24 @@
     @if (task().title === 'Reactive Forms') {
       <span class="task-card__button-container">
         <p class="task-card__actions">
-          <button type="button" class="task-card__button" (click)="onShowSimpleForm()">Click to show the simple form</button>
+          <button
+            type="button"
+            class="task-card__button"
+            (click)="onShowSimpleForm()"
+            aria-label="Show simple form"
+          >
+            Click to show the simple form
+          </button>
         </p>
         <p class="task-card__actions">
-          <button type="button" class="task-card__button" (click)="onShowComplexForm()">Click to show the complex form</button>
+          <button
+            type="button"
+            class="task-card__button"
+            (click)="onShowComplexForm()"
+            aria-label="Show complex form"
+          >
+            Click to show the complex form
+          </button>
         </p>
       </span>
       <span class="task-card__form-container">

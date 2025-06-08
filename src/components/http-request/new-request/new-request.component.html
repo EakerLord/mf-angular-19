@@ -1,11 +1,11 @@
-<dialog open class="place-picker">
+<dialog open class="place-picker" role="dialog" aria-modal="true" aria-labelledby="place-picker-title" aria-describedby="place-picker-desc">
   <header class="place-picker__header">
-    <h1 class="place-picker__title">PlacePicker</h1>
+    <h1 class="place-picker__title" id="place-picker-title">PlacePicker</h1>
     <p class="place-picker__actions">
-      <button type="button" class="place-picker__button" (click)="onCancel()">Close HTTP request</button>
+      <button type="button" class="place-picker__button" (click)="onCancel()" #closeButton> Close HTTP request </button>
     </p>
   </header>
-  <p class="place-picker__description">
+  <p class="place-picker__description" id="place-picker-desc">
     Create your personal collection of places you would like to visit or you have visited.
   </p>
   <main class="place-picker__main">

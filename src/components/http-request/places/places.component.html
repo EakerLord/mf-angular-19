@@ -1,12 +1,8 @@
 <ul class="places-list">
   @for (place of places(); track place.id) {
     <li class="places-list__item">
-      <button class="places-list__button" (click)="onSelectPlace(place)">
-        <img
-          class="places-list__image"
-          [src]="'http://localhost:3000/' + place.image.src"
-          [alt]="place.image.alt"
-        />
+      <button class="places-list__button" (click)="onSelectPlace(place)" [attr.aria-label]="'Select ' + place.title" type="button">
+        <img class="places-list__image" [src]="'http://localhost:3000/' + place.image.src" [alt]="place.image.alt" />
         <h3 class="places-list__title">{{ place.title }}</h3>
       </button>
     </li>

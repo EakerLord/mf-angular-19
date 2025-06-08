@@ -1,5 +1,11 @@
-<div class="not-found">
+<main #mainContent class="not-found" tabindex="-1" aria-live="polite">
   <h1 class="not-found__title">Sorry! Page not found</h1>
   <p class="not-found__description">The URL you requested could not be found.</p>
-  <a [routerLink]="['/a19']" class="not-found__back-link">Back to main page</a>
-</div>
+  <a
+    [routerLink]="['/a19']"
+    class="not-found__back-link"
+    aria-label="Back to main page"
+  >
+    Back to main page
+  </a>
+</main>

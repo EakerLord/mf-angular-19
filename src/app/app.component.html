@@ -1,28 +1,40 @@
 @if (error()) {
-  <app-error-modal [title]="'Something went wrong'" [message]="error()"></app-error-modal>
+  <app-error-modal
+    [title]="'Something went wrong'" [message]="error()"
+    role="alertdialog" aria-modal="true"
+    [attr.aria-labelledby]="'error-modal-title'"
+    [attr.aria-describedby]="'error-modal-message'" />
 }
+
 <div class="mf-angular-19-remote-theme">
-  <app-header></app-header>
-  <div>
-    <p class="mf-angular-19-remote-theme__fallback">
+  <header>
+    <app-header></app-header>
+  </header>
+  <main tabindex="-1" id="main-content">
+    <h1 class="mf-angular-19-remote-theme__fallback">
       Select a lesson to see their tasks, but be aware because you have a 3% chance of a cursed guard blocking your way:
-    </p>
-    <ul class="mf-angular-19-remote-theme__users">
-      @for (lesson of lessons; track lesson.id) {
-        <li>
-          <app-lesson
-            [lesson]="lesson"
-            [selected]="lesson.id === selectedLessonId"
-            (select)="onSelectLesson($event)">
-          </app-lesson>
-        </li>
-      }
-    </ul>
-    <div class="mf-angular-19-remote-theme__lessons-tasks">
+    </h1>
+    <nav aria-label="Lessons">
+      <ul class="mf-angular-19-remote-theme__users">
+        @for (lesson of lessons; track lesson.id) {
+          <li>
+            <app-lesson
+              [lesson]="lesson"
+              [selected]="lesson.id === selectedLessonId"
+              (select)="onSelectLesson($event)"
+              [attr.tabindex]="0"
+              [attr.aria-selected]="lesson.id === selectedLessonId"
+              [attr.role]="'option'">
+            </app-lesson>
+          </li>
+        }
+      </ul>
+    </nav>
+    <section class="mf-angular-19-remote-theme__lessons-tasks" aria-live="polite">
       @if (selectedLesson) {
         <router-outlet />
       }
-    </div>
-  </div>
+    </section>
+  </main>
 </div>
 

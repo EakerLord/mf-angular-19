@@ -4,6 +4,10 @@
     [routerLink]="['./tasks/', lesson().id]"
     routerLinkActive="lesson-card__button--active"
     (click)="onSelectLesson()"
+    role="option"
+    [attr.aria-selected]="selected()"
+    [attr.aria-label]="'View tasks for ' + lesson().name"
+    type="button"
   >
     <img
       class="lesson-card__image"
