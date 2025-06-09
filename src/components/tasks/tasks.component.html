@@ -2,23 +2,22 @@
   <router-outlet />
   @if (!isNewTask()) {
     <header class="tasks-section__header">
-      <h2 class="tasks-section__title" id="tasks-section-title">{{ lessonName() }}'s Tasks</h2>
+      <h2 i18n class="tasks-section__title" id="tasks-section-title">{{ lessonName() }}'s Tasks</h2>
       <p>
-        <label for="tasks-filter" class="visually-hidden">Filter tasks</label>
         <select id="tasks-filter" class="tasks-section__filter-select" (change)="onChangeTasksFilter(filter.value)" #filter>
-          <option value="all">All</option>
-          <option value="open">Open</option>
-          <option value="in-progress">In-Progress</option>
-          <option value="done">Completed</option>
+          <option i18n value="all">All</option>
+          <option i18n value="open">Open</option>
+          <option i18n value="in-progress">In-Progress</option>
+          <option i18n value="done">Completed</option>
         </select>
       </p>
       <menu class="tasks-section__menu" aria-label="Tasks actions">
-        <button class="tasks-section__menu-button"
+        <button i18n class="tasks-section__menu-button"
           [routerLink]="['./']"
           [queryParams]="{ sort: sortSignal() === 'asc' ? 'desc' : 'asc' }">
           Sort {{ sortSignal() === 'asc' ? 'Descending' : 'Ascending' }}
         </button>
-        <button class="tasks-section__menu-button" [routerLink]="['new']">Add Task</button>
+        <button i18n class="tasks-section__menu-button" [routerLink]="['new']">Add Task</button>
       </menu>
     </header>
 

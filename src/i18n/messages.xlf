@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="6302440884499568336" datatype="html">
+        <source> Select a lesson to see their tasks, but be aware because you have a 3% chance of a cursed guard blocking your way: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">14,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4645410387637009155" datatype="html">
+        <source>Knowledge of Angular 19</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/header/header.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="620498388845915132" datatype="html">
+        <source> Senior-level knowledge with the Angular framework and version 19 </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/header/header.component.html</context>
+          <context context-type="linenumber">9,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3364049686874908999" datatype="html">
+        <source>Loading the available places, please wait.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/http-request/available-places/available-places.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="980843442263639747" datatype="html">
+        <source>Unfortunately, no places could be found.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/http-request/available-places/available-places.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/http-request/favorite-places/favorite-places.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7601505661238558405" datatype="html">
+        <source>Loading your favorite places, please wait.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/http-request/favorite-places/favorite-places.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="425079638873351934" datatype="html">
+        <source> Close HTTP request </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/http-request/new-request/new-request.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8729729730439292554" datatype="html">
+        <source> Create your personal collection of places you would like to visit or you have visited. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/http-request/new-request/new-request.component.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1106209590160342889" datatype="html">
+        <source>Add Task</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/new-task/new-task.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/tasks/tasks.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2330577642930707695" datatype="html">
+        <source> Cancel </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/new-task/new-task.component.html</context>
+          <context context-type="linenumber">9,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7941428823403788384" datatype="html">
+        <source> Create </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/new-task/new-task.component.html</context>
+          <context context-type="linenumber">17,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5701618810648052610" datatype="html">
+        <source>Title</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/new-task/new-task.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4739818603756173797" datatype="html">
+        <source>Summary</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/new-task/new-task.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1917979079769004212" datatype="html">
+        <source>Due Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/new-task/new-task.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8441648894514248425" datatype="html">
+        <source>Sorry! Page not found</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/not-found/not-found.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8726180392636997861" datatype="html">
+        <source>The URL you requested could not be found.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/not-found/not-found.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7900548217969885180" datatype="html">
+        <source> Back to main page </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/not-found/not-found.component.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8895670201516708467" datatype="html">
+        <source>Invalid form - please check your input data.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5439344378396049624" datatype="html">
+        <source>Welcome on board!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5553294156727471993" datatype="html">
+        <source>We just need a little bit of data from you to get you started 🚀</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5693296612971286474" datatype="html">
+        <source>Account Information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4768749765465246664" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/simple-form/simple-form.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1431416938026210429" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/simple-form/simple-form.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3241357959735682038" datatype="html">
+        <source>Confirm Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3465962430409924123" datatype="html">
+        <source>Personal Information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6028371114637047813" datatype="html">
+        <source>First Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4407559560004943843" datatype="html">
+        <source>Last Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6660971973775422786" datatype="html">
+        <source>Your Address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1847047605496409443" datatype="html">
+        <source>Street</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6370642728789544052" datatype="html">
+        <source>Number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7647550512660678493" datatype="html">
+        <source>Postal Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2314075913167237221" datatype="html">
+        <source>City</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="963723905263737388" datatype="html">
+        <source>What best describes your role?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6619940726671097878" datatype="html">
+        <source>Select a role</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1951089763019042037" datatype="html">
+        <source>Student</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4250948520990652627" datatype="html">
+        <source>Teacher</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4536004607617325628" datatype="html">
+        <source>Employee</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1096271480010782204" datatype="html">
+        <source>Founder</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8693603235657020323" datatype="html">
+        <source>Other</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9039363027354840431" datatype="html">
+        <source>How did you find us?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3590805807378700861" datatype="html">
+        <source>Google</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7185225502380172810" datatype="html">
+        <source>Referred by friend</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7808756054397155068" datatype="html">
+        <source>Reset</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7028204981963450021" datatype="html">
+        <source>Sign up</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/complex-form/complex-form.component.html</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2454050363478003966" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/simple-form/simple-form.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/simple-form/simple-form.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2837248686284270505" datatype="html">
+        <source>Please enter a valid email.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/simple-form/simple-form.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2262061079677866857" datatype="html">
+        <source> Please enter a valid password, at least 6 characters and a question mark. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/reactive-forms/simple-form/simple-form.component.html</context>
+          <context context-type="linenumber">37,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7593555694782789615" datatype="html">
+        <source>Open</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/tasks/tasks.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2111441992553168069" datatype="html">
+        <source>In-Progress</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/tasks/tasks.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1161299114153631702" datatype="html">
+        <source>Completed</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/tasks/tasks.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="764036135980957866" datatype="html">
+        <source> Change Status </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4556568091546276674" datatype="html">
+        <source> Complete </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">22,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="513234570527737280" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ lessonName() }}"/>&apos;s Tasks</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/tasks/tasks.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1616102757855967475" datatype="html">
+        <source>All</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/tasks/tasks.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1376625085991135184" datatype="html">
+        <source> Sort <x id="INTERPOLATION" equiv-text="{{ sortSignal() === &apos;asc&apos; ? &apos;Descending&apos; : &apos;Ascending&apos; }}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/tasks/tasks.component.html</context>
+          <context context-type="linenumber">17,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8366540265192565402" datatype="html">
+        <source> Okay </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/shared/modal-error/components/error/error-modal.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

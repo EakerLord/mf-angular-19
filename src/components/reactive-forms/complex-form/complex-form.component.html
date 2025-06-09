@@ -1,26 +1,26 @@
 <form class="signup-form" [formGroup]="form" (ngSubmit)="onSubmit()" aria-labelledby="signup-title" novalidate>
   <section aria-live="assertive">
     @if (form.invalid && form.touched) {
-      <p class="signup-form__error">Invalid form - please check your input data.</p>
+      <p i18n class="signup-form__error">Invalid form - please check your input data.</p>
     }
   </section>
 
-  <h2 class="signup-form__title" id="signup-title">Welcome on board!</h2>
-  <p class="signup-form__intro">We just need a little bit of data from you to get you started 🚀</p>
+  <h2 i18n class="signup-form__title" id="signup-title">Welcome on board!</h2>
+  <p i18n class="signup-form__intro">We just need a little bit of data from you to get you started 🚀</p>
 
   <fieldset class="signup-form__fieldset">
-    <legend class="signup-form__legend">Account Information</legend>
+    <legend i18n class="signup-form__legend">Account Information</legend>
     <div class="signup-form__group">
-      <label class="signup-form__label" for="email">Email</label>
+      <label i18n class="signup-form__label" for="email">Email</label>
       <input class="signup-form__control" id="email" type="email" name="email" formControlName="email" required />
     </div>
     <div class="signup-form__row" formGroupName="passwords">
       <div class="signup-form__group">
-        <label class="signup-form__label" for="password">Password</label>
+        <label i18n class="signup-form__label" for="password">Password</label>
         <input class="signup-form__control" id="password" type="password" name="password" formControlName="password" required />
       </div>
       <div class="signup-form__group">
-        <label class="signup-form__label" for="confirm-password">Confirm Password</label>
+        <label i18n class="signup-form__label" for="confirm-password">Confirm Password</label>
         <input class="signup-form__control" id="confirm-password" type="password" name="confirm-password" formControlName="confirmPassword" required />
       </div>
     </div>
@@ -28,36 +28,36 @@
   <hr />
 
   <fieldset class="signup-form__fieldset">
-    <legend class="signup-form__legend">Personal Information</legend>
+    <legend i18n class="signup-form__legend">Personal Information</legend>
     <div class="signup-form__row">
       <div class="signup-form__group">
-        <label class="signup-form__label" for="first-name">First Name</label>
+        <label i18n class="signup-form__label" for="first-name">First Name</label>
         <input class="signup-form__control" type="text" id="first-name" name="first-name" formControlName="firstName" required />
       </div>
       <div class="signup-form__group">
-        <label class="signup-form__label" for="last-name">Last Name</label>
+        <label i18n class="signup-form__label" for="last-name">Last Name</label>
         <input class="signup-form__control" type="text" id="last-name" name="last-name" formControlName="lastName" required />
       </div>
     </div>
     <fieldset class="signup-form__fieldset" formGroupName="address">
-      <legend class="signup-form__legend">Your Address</legend>
+      <legend i18n class="signup-form__legend">Your Address</legend>
       <div class="signup-form__row">
         <div class="signup-form__group">
-          <label class="signup-form__label" for="street">Street</label>
+          <label i18n class="signup-form__label" for="street">Street</label>
           <input class="signup-form__control" type="text" id="street" name="street" formControlName="street" required />
         </div>
         <div class="signup-form__group">
-          <label class="signup-form__label" for="number">Number</label>
+          <label i18n class="signup-form__label" for="number">Number</label>
           <input class="signup-form__control" type="text" id="number" name="number" formControlName="number" required />
         </div>
       </div>
       <div class="signup-form__row">
         <div class="signup-form__group">
-          <label class="signup-form__label" for="postal-code">Postal Code</label>
+          <label i18n class="signup-form__label" for="postal-code">Postal Code</label>
           <input class="signup-form__control" type="text" id="postal-code" name="postal-code" formControlName="postalCode" required />
         </div>
         <div class="signup-form__group">
-          <label class="signup-form__label" for="city">City</label>
+          <label i18n class="signup-form__label" for="city">City</label>
           <input class="signup-form__control" type="text" id="city" name="city" formControlName="city" required />
         </div>
       </div>
@@ -67,45 +67,45 @@
 
   <div class="signup-form__row">
     <div class="signup-form__group">
-      <label class="signup-form__label" for="role">What best describes your role?</label>
+      <label i18n class="signup-form__label" for="role">What best describes your role?</label>
       <select class="signup-form__control" id="role" name="role" formControlName="role" required>
-        <option value="">Select a role</option>
-        <option value="student">Student</option>
-        <option value="teacher">Teacher</option>
-        <option value="employee">Employee</option>
-        <option value="founder">Founder</option>
-        <option value="other">Other</option>
+        <option i18n value="">Select a role</option>
+        <option i18n value="student">Student</option>
+        <option i18n value="teacher">Teacher</option>
+        <option i18n value="employee">Employee</option>
+        <option i18n value="founder">Founder</option>
+        <option i18n value="other">Other</option>
       </select>
     </div>
   </div>
 
   <fieldset class="signup-form__fieldset" formArrayName="source">
-    <legend class="signup-form__legend">How did you find us?</legend>
+    <legend i18n class="signup-form__legend">How did you find us?</legend>
     <div class="signup-form__group">
       <input class="signup-form__control" type="checkbox" id="google" name="acquisition-google" value="google" formArrayName="0" />
-      <label class="signup-form__label" for="google">Google</label>
+      <label i18n class="signup-form__label" for="google">Google</label>
     </div>
     <div class="signup-form__group">
       <input class="signup-form__control" type="checkbox" id="friend" name="acquisition-friend" value="friend" formArrayName="1" />
-      <label class="signup-form__label" for="friend">Referred by friend</label>
+      <label i18n class="signup-form__label" for="friend">Referred by friend</label>
     </div>
     <div class="signup-form__group">
       <input class="signup-form__control" type="checkbox" id="other" name="acquisition-other" value="other" formArrayName="2" />
-      <label class="signup-form__label" for="other">Other</label>
+      <label i18n class="signup-form__label" for="other">Other</label>
     </div>
   </fieldset>
 
   <div class="signup-form__row">
     <div class="signup-form__group">
       <label class="signup-form__label" for="terms-and-conditions">
-        <input class="signup-form__control" type="checkbox" id="terms-and-conditions" name="terms" formControlName="terms" required />
+        <input i18n class="signup-form__control" type="checkbox" id="terms-and-conditions" name="terms" formControlName="terms" required />
         I agree to the terms and conditions
       </label>
     </div>
   </div>
 
   <div class="signup-form__actions">
-    <button type="reset" class="signup-form__button signup-form__button--flat" (click)="onReset()">Reset</button>
-    <button type="submit" class="signup-form__button" [disabled]="form.invalid">Sign up</button>
+    <button i18n type="reset" class="signup-form__button signup-form__button--flat" (click)="onReset()">Reset</button>
+    <button i18n type="submit" class="signup-form__button" [disabled]="form.invalid">Sign up</button>
   </div>
 </form>

@@ -20,8 +20,9 @@
 						"outputPath": "dist/mf-angular-19",
 						"index": "src/index.html",
 						"polyfills": [
-							"zone.js"
-						],
+              "zone.js",
+              "@angular/localize/init"
+            ],
 						"tsConfig": "tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
 						"assets": [
@@ -38,7 +39,8 @@
 						"scripts": [],
 						"main": "src/main.ts",
 						"extraWebpackConfig": "webpack.config.js",
-						"commonChunk": false
+						"commonChunk": false,
+            "localize": true
 					},
 					"configurations": {
 						"production": {
@@ -61,7 +63,15 @@
 							"optimization": false,
 							"extractLicenses": false,
 							"sourceMap": true
-						}
+						},
+            "es": {
+              "localize": ["es"],
+              "outputPath": "dist/mf-angular-19/es"
+            },
+            "en": {
+              "localize": ["en-US"],
+              "outputPath": "dist/mf-angular-19/en"
+            }
 					},
 					"defaultConfiguration": "production"
 				},
@@ -74,7 +84,13 @@
 						},
 						"development": {
 							"buildTarget": "mf-angular-19:build:development"
-						}
+						},
+            "es": {
+              "buildTarget": "mf-angular-19:build:es"
+            },
+            "en": {
+              "buildTarget": "mf-angular-19:build:en"
+            }
 					},
 					"defaultConfiguration": "development",
 					"options": {
@@ -90,9 +106,10 @@
 					"builder": "@angular-devkit/build-angular:karma",
 					"options": {
 						"polyfills": [
-							"zone.js",
-							"zone.js/testing"
-						],
+              "zone.js",
+              "zone.js/testing",
+              "@angular/localize/init"
+            ],
 						"tsConfig": "tsconfig.spec.json",
 						"inlineStyleLanguage": "scss",
 						"assets": [
@@ -109,7 +126,13 @@
 						"scripts": []
 					}
 				}
-			}
+			},
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "es": "src/i18n/messages.es.xlf"
+        }
+      }
 		}
 	}
 }

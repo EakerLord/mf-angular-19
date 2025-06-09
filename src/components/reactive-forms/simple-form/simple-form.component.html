@@ -1,9 +1,9 @@
 <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()" aria-labelledby="login-title" novalidate>
-  <h2 class="login-form__title" id="login-title">Login</h2>
+  <h2 i18n class="login-form__title" id="login-title">Login</h2>
 
   <div class="login-form__row">
     <div class="login-form__group login-form__group--no-margin">
-      <label class="login-form__label" for="email">Email</label>
+      <label i18n class="login-form__label" for="email">Email</label>
       <input
         class="login-form__control"
         id="email"
@@ -15,7 +15,7 @@
     </div>
 
     <div class="login-form__group login-form__group--no-margin">
-      <label class="login-form__label" for="password">Password</label>
+      <label i18n class="login-form__label" for="password">Password</label>
       <input
         class="login-form__control"
         id="password"
@@ -26,15 +26,15 @@
       />
     </div>
 
-    <button class="login-form__button" type="submit" [disabled]="form.invalid">Login</button>
+    <button i18n class="login-form__button" type="submit" [disabled]="form.invalid">Login</button>
   </div>
 
   <section aria-live="assertive">
     @if (emailIsValid) {
-      <p class="login-form__error" id="email-error">Please enter a valid email.</p>
+      <p i18n class="login-form__error" id="email-error">Please enter a valid email.</p>
     }
     @if (passwordIsValid) {
-      <p class="login-form__error" id="password-error">
+      <p i18n class="login-form__error" id="password-error">
         Please enter a valid password, at least 6 characters and a question mark.
       </p>
     }

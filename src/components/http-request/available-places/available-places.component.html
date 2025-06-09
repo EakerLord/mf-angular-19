@@ -3,11 +3,11 @@
     <p class="places-fallback-text">{{ localError() }}</p>
   }
   @if (isFetching() && !localError()) {
-    <p class="places-fallback-text">Loading the available places, please wait.</p>
+    <p i18n class="places-fallback-text">Loading the available places, please wait.</p>
   }
   @if (places()) {
     <app-places [places]="places()!" (selectPlace)="onSelectPlace($event)" />
   } @else if (places() && places()?.length === 0) {
-    <p class="places-fallback-text">Unfortunately, no places could be found.</p>
+    <p i18n class="places-fallback-text">Unfortunately, no places could be found.</p>
   }
 </app-places-container>

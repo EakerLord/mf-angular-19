@@ -6,24 +6,20 @@
         <p class="task-card__status" aria-live="polite">{{ taskStatus() }}</p>
       </span>
       <div class="task-card__status-form">
-        <select
-          id="task-status-{{task().id}}"
-          #status
-          class="task-card__status-select"
-        >
-          <option value="open" [selected]="task().status === 'OPEN'">Open</option>
-          <option value="in-progress" [selected]="task().status === 'IN_PROGRESS'">In-Progress</option>
-          <option value="done" [selected]="task().status === 'DONE'">Completed</option>
+        <select id="task-status-{{task().id}}" #status class="task-card__status-select">
+          <option i18n value="open" [selected]="task().status === 'OPEN'">Open</option>
+          <option i18n value="in-progress" [selected]="task().status === 'IN_PROGRESS'">In-Progress</option>
+          <option i18n value="done" [selected]="task().status === 'DONE'">Completed</option>
         </select>
         <p>
-          <button class="task-card__button" (click)="onChangeTaskStatus(task().id, status.value)"
+          <button i18n class="task-card__button" (click)="onChangeTaskStatus(task().id, status.value)"
            [attr.aria-label]="'Change status for {{ task().title }}'">
             Change Status
           </button>
         </p>
       </div>
       <p class="task-card__actions">
-        <button type="button" class="task-card__button" (click)="onCompleteTask()" [attr.aria-label]="'Mark {{ task().title }} as complete'">
+        <button i18n type="button" class="task-card__button" (click)="onCompleteTask()" [attr.aria-label]="'Mark {{ task().title }} as complete'">
           Complete
         </button>
       </p>
