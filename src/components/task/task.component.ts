@@ -1,5 +1,5 @@
 import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
-import { DatePipe } from "@angular/common";
+import { CommonModule, DatePipe } from "@angular/common";
 import { interval } from "rxjs";
 
 import { type Task, type TaskStatus } from "./task.model";
@@ -16,7 +16,7 @@ import { ComplexFormComponent } from '../reactive-forms/complex-form/complex-for
   selector: 'app-task',
   standalone: true,
   imports: [
-    CardComponent, DatePipe, TemperaturePipe, SafeLinkDirective, AuthDirective, NewRequestComponent, SimpleFormComponent, ComplexFormComponent
+    CardComponent, DatePipe, TemperaturePipe, SafeLinkDirective, AuthDirective, NewRequestComponent, SimpleFormComponent, ComplexFormComponent, CommonModule
   ],
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss',

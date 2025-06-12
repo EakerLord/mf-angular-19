@@ -28,153 +28,149 @@
     <time class="task-card__date">{{ task().dueDate | date:'fullDate'}}</time>
     <p class="task-card__summary">{{ task().summary }}</p>
 
-    @if (task().title === 'Data biding') {
+    <ul *ngIf="task().title === 'Data biding'">
+      <li><p i18n class="task-card__summary">One-way: Interpolation uses:</p><p class="task-card__summary" ngNonBindable> {{ expresion }}</p></li>
+      <li><p i18n class="task-card__summary">One-way: Property binding uses: [src]="imageUrl"</p></li>
+      <li><p i18n class="task-card__summary">One-way: Event binding uses: (click)="onClick()"</p></li>
+      <li><p i18n class="task-card__summary">Two-way: Biding uses: [(ngModel)]="username" </p></li>
+    </ul>
+
+    <ul *ngIf="task().title === 'Directives'">
+      <li><p i18n class="task-card__summary">Structural directives: Modify the structure of the DOM, adding or removing elements.</p></li>
+      <li><p i18n class="task-card__summary">Attribute directives: Change the appearance or behavior of an element, such as modifying styles or attributes.</p></li>
+      <li><p i18n class="task-card__summary">Components: These are directives with their own template, that is, they combine logic and view, and are the basis of any Angular application.</p></li>
+      <li>
+        <div *appAuth="'fede'">
+          <p i18n class="task-card__summary">
+            Example of a structural directive called "*appAuth" and an attribute directive called "appSafeLink":
+            <a class="task-card__summary" href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
+          </p>
+        </div>
+      </li>
+    </ul>
+
+    <ul *ngIf="task().title === 'Pipes'">
+      <li><p i18n class="task-card__summary">Example of the inbuild "DatePipe" and a custom pipe named "temperature" that can accept up to two configuration attributes:</p></li>
       <ul>
-        <li><p class="task-card__summary" ngNonBindable>One-way: Interpolation uses: {{ expresion }}</p></li>
-        <li><p class="task-card__summary" ngNonBindable>One-way: Property binding uses: [src]="imageUrl"</p></li>
-        <li><p class="task-card__summary" ngNonBindable>One-way: Event binding uses: (click)="onClick()"</p></li>
-        <li><p class="task-card__summary" ngNonBindable>Two-way: Biding uses: [(ngModel)]="username" </p></li>
+        <li><p i18n class="task-card__summary">Custom pipe:</p><p class="task-card__summary"> {{ temperature() | temperature:'cel':'fah' }} <|> {{ temperature() | temperature:'fah':'cel' }}</p></li>
+        <li><p i18n class="task-card__summary">In build pipe: </p><p class="task-card__summary"><time class="task-card__date">{{ task().dueDate | date:'fullDate'}}</time></p></li>
       </ul>
-    }
-    @if (task().title === 'Directives') {
-      <ul>
-        <li><p class="task-card__summary">Structural directives: Modify the structure of the DOM, adding or removing elements.</p></li>
-        <li><p class="task-card__summary">Attribute directives: Change the appearance or behavior of an element, such as modifying styles or attributes.</p></li>
-        <li><p class="task-card__summary">Components: These are directives with their own template, that is, they combine logic and view, and are the basis of any Angular application.</p></li>
-        <li>
-          <div *appAuth="'fede'">
-            <p class="task-card__summary">
-              Example of a structural directive called "*appAuth" and an attribute directive called "appSafeLink":
-              <a class="task-card__summary" href="https://angular.dev/" appSafeLink="/tutorials">Link to Angular site!</a>
-            </p>
-          </div>
-        </li>
-      </ul>
-    }
-    @if (task().title === 'Pipes') {
-      <ul>
-        <li><p class="task-card__summary">Example of the inbuild "DatePipe" and a custom pipe named "temperature" that can accept up to two configuration attributes:</p></li>
+    </ul>
+
+    <ul *ngIf="task().title === 'Dependency Injection'">
+      <li><p i18n class="task-card__summary">Angular has an Injector that manages dependencies declared as providers. If a component or service needs another class, Angular looks for that class in the injection tree, creates it (if necessary), and delivers it.</p></li>
+      <li><p i18n class="task-card__summary">Any class marked with the &#64;Injectable() decorator can be a dependency.</p></li>
+      <li>
+        <p i18n class="task-card__summary">Angular allows you to control the scope of the injected instance:</p>
         <ul>
-          <li><p class="task-card__summary">Custom pipe: {{ temperature() | temperature:'cel':'fah' }} <|> {{ temperature() | temperature:'fah':'cel' }}</p></li>
-          <li><p class="task-card__summary">In build pipe: <time class="task-card__date">{{ task().dueDate | date:'fullDate'}}</time></p></li>
+          <li><p i18n class="task-card__summary">providedIn: 'root': Global singleton, available throughout the application and Only one instance.</p></li>
+          <li><p i18n class="task-card__summary">providedIn: 'platform' (Advanced): Available across the entire platform, even beyond multiple Angular apps on the same page.</p></li>
+          <li><p i18n class="task-card__summary">providedIn: 'any': A new instance for each lazy-loaded module and useful for isolating services between modules.</p></li>
+          <li><p i18n class="task-card__summary">providedIn: 'self' / SkipSelf (advanced): Controls which level of the Angular injector to resolve the dependency and used in conjunction with &#64;Optional, &#64;Self, &#64;SkipSelf, etc.</p></li>
         </ul>
-      </ul>
+      </li>
+      <li><p i18n class="task-card__summary">In addition to providedIn, Angular also allows you to declare providers in various places: &#64;Injectable( providedIn: 'root' ), providers: [] in a component, providers: [] in a module and Injector.create()</p></li>
+      <li><p i18n class="task-card__summary">Manual or advanced injection: Injecting custom tokens, injecting values ​​(useValue), Injecting concrete classes (useClass) and Injecting factories (useFactory)</p></li>
+    </ul>
+
+    <ul *ngIf="task().title === 'RxJS'">
+      <li><p i18n class="task-card__summary">Observables are values on a stream of data and are great for managing events or streamed data.</p></li>
+      <li><p i18n class="task-card__summary">Signals are values on a container and are great for managing the application state.</p></li>
+      <li><p i18n class="task-card__summary">This is the example of a built-in observable:</p><p class="task-card__summary">{{intervalSignal()}}</p></li>
+      <li><p i18n class="task-card__summary">This is the example of a custom observable by clicking the button:</p><p class="task-card__summary"> {{clickCount()}}</p></li>
+    </ul>
+    <p *ngIf="task().title === 'RxJS'" class="task-card__actions">
+      <button
+        i18n
+        type="button"
+        class="task-card__button"
+        (click)="onClickObservable()"
+        aria-label="Increment observable value"
+      >
+        Click to increment the signal converted into observable!
+      </button>
+    </p>
+
+    <ul *ngIf="task().title === 'HTTP Requests'">
+      <li>
+        <p i18n class="task-card__summary">HTTP Requests in Angular allow your application to communicate with external servers to send or receive data, such as:</p>
+        <ul>
+          <li><p i18n class="task-card__summary">Retrieving information from a REST API, Submitting forms, Saving data to a database, Authentication, etc. </p></li>
+        </ul>
+      </li>
+      <li>
+        <p i18n class="task-card__summary">Types of HTTP Requests:</p>
+        <ul>
+          <li><p i18n class="task-card__summary">GET: Obtains data from the server. Used to read information, such as a list of users or products.</p></li>
+          <li><p i18n class="task-card__summary">POST: Sends data to the server. Used to create new resources (for example, registering a user).</p></li>
+          <li><p i18n class="task-card__summary">PUT: Completely replaces an existing resource. Used when you want to update an entire object.</p></li>
+          <li><p i18n class="task-card__summary">PATCH: Partially updates a resource. Use it when you only want to change some fields of the object.</p></li>
+          <li><p i18n class="task-card__summary">DELETE: Deletes a resource from the server.</p></li>
+        </ul>
+      </li>
+    </ul>
+    @if (isAddingRequest()) {
+      <app-new-request (close)="onCloseAddRequest()" />
     }
-    @if (task().title === 'Dependency Injection') {
-      <ul>
-        <li><p class="task-card__summary">Angular has an Injector that manages dependencies declared as providers. If a component or service needs another class, Angular looks for that class in the injection tree, creates it (if necessary), and delivers it.</p></li>
-        <li><p class="task-card__summary">Any class marked with the &#64;Injectable() decorator can be a dependency.</p></li>
-        <li>
-          <p class="task-card__summary">Angular allows you to control the scope of the injected instance:</p>
-          <ul>
-            <li><p class="task-card__summary">providedIn: 'root': Global singleton, available throughout the application and Only one instance.</p></li>
-            <li><p class="task-card__summary">providedIn: 'platform' (Advanced): Available across the entire platform, even beyond multiple Angular apps on the same page.</p></li>
-            <li><p class="task-card__summary">providedIn: 'any': A new instance for each lazy-loaded module and useful for isolating services between modules.</p></li>
-            <li><p class="task-card__summary">providedIn: 'self' / SkipSelf (advanced): Controls which level of the Angular injector to resolve the dependency and used in conjunction with &#64;Optional, &#64;Self, &#64;SkipSelf, etc.</p></li>
-          </ul>
-        </li>
-        <li><p class="task-card__summary">In addition to providedIn, Angular also allows you to declare providers in various places: &#64;Injectable( providedIn: 'root' ), providers: [] in a component, providers: [] in a module and Injector.create()</p></li>
-        <li><p class="task-card__summary">Manual or advanced injection: Injecting custom tokens, injecting values ​​(useValue), Injecting concrete classes (useClass) and Injecting factories (useFactory)</p></li>
-      </ul>
-    }
-    @if (task().title === 'RxJS') {
-      <ul>
-        <li><p class="task-card__summary">Observables are values on a stream of data and are great for managing events or streamed data.</p></li>
-        <li><p class="task-card__summary">Signals are values on a container and are great for managing the application state.</p></li>
-        <li><p class="task-card__summary">This is the example of a built-in observable: {{intervalSignal()}}</p></li>
-        <li><p class="task-card__summary">This is the example of a custom observable by clicking the button: {{clickCount()}}</p></li>
-      </ul>
+    <p *ngIf="task().title === 'HTTP Requests'" class="task-card__actions">
+      <button
+        i18n
+        type="button"
+        class="task-card__button"
+        (click)="onStartAddRequest()"
+        aria-label="Learn more about HTTP requests"
+      >
+        Click on me to learn more about HTTP requests with images!
+      </button>
+    </p>
+
+    <ul *ngIf="task().title === 'Routes'">
+      <li>
+        <p i18n class="task-card__summary">Guards types</p>
+        <ul>
+          <li><p i18n class="task-card__summary">CanMatch: Decides whether a route can be used by the router before it is even evaluated whether it can be activated or loaded.</p></li>
+          <li><p i18n class="task-card__summary">CanActivate: Determines whether a route can be activated. This is useful for protecting routes that should only be accessible to authenticated users or those with certain permissions.</p></li>
+          <li><p i18n class="task-card__summary">CanDeactivate: Controls whether a user can exit a route. The most typical example is unsaved data.</p></li>
+          <li><p i18n class="task-card__summary">CanLoad: Prevents a lazy-loaded module from loading if certain conditions are not met.</p></li>
+        </ul>
+      </li>
+      <li>
+        <p i18n class="task-card__summary">Data types in the guards</p>
+        <ul>
+          <li><p i18n class="task-card__summary">data: Allows you to associate custom static information with a route.</p></li>
+          <li><p i18n class="task-card__summary">resolve: Allows you to obtain necessary data before a route is activated. Ensures that the information is available before displaying the associated component.</p></li>
+        </ul>
+      </li>
+    </ul>
+
+    <span *ngIf="task().title === 'Routes'" class="task-card__button-container">
       <p class="task-card__actions">
         <button
+          i18n
           type="button"
           class="task-card__button"
-          (click)="onClickObservable()"
-          aria-label="Increment observable value"
+          (click)="onShowSimpleForm()"
+          aria-label="Show simple form"
         >
-          Click to increment the signal converted into observable!
+          Click to show the simple form
         </button>
       </p>
-    }
-    @if (task().title === 'HTTP Requests') {
-      <ul>
-        <li>
-          <p class="task-card__summary">HTTP Requests in Angular allow your application to communicate with external servers to send or receive data, such as:</p>
-          <ul>
-            <li><p class="task-card__summary">Retrieving information from a REST API, Submitting forms, Saving data to a database, Authentication, etc. </p></li>
-          </ul>
-        </li>
-        <li>
-          <p class="task-card__summary">Types of HTTP Requests:</p>
-          <ul>
-            <li><p class="task-card__summary">GET: Obtains data from the server. Used to read information, such as a list of users or products.</p></li>
-            <li><p class="task-card__summary">POST: Sends data to the server. Used to create new resources (for example, registering a user).</p></li>
-            <li><p class="task-card__summary">PUT: Completely replaces an existing resource. Used when you want to update an entire object.</p></li>
-            <li><p class="task-card__summary">PATCH: Partially updates a resource. Use it when you only want to change some fields of the object.</p></li>
-            <li><p class="task-card__summary">DELETE: Deletes a resource from the server.</p></li>
-          </ul>
-        </li>
-      </ul>
-      @if (isAddingRequest()) {
-        <app-new-request (close)="onCloseAddRequest()" />
-      }
       <p class="task-card__actions">
         <button
+          i18n
           type="button"
           class="task-card__button"
-          (click)="onStartAddRequest()"
-          aria-label="Learn more about HTTP requests"
+          (click)="onShowComplexForm()"
+          aria-label="Show complex form"
         >
-          Click on me to learn more about HTTP requests with images!
+          Click to show the complex form
         </button>
       </p>
-    }
-    @if (task().title === 'Routes') {
-      <ul>
-        <li>
-          <p class="task-card__summary">Guards types</p>
-          <ul>
-            <li><p class="task-card__summary">CanMatch: Decides whether a route can be used by the router before it is even evaluated whether it can be activated or loaded.</p></li>
-            <li><p class="task-card__summary">CanActivate: Determines whether a route can be activated. This is useful for protecting routes that should only be accessible to authenticated users or those with certain permissions.</p></li>
-            <li><p class="task-card__summary">CanDeactivate: Controls whether a user can exit a route. The most typical example is unsaved data.</p></li>
-            <li><p class="task-card__summary">CanLoad: Prevents a lazy-loaded module from loading if certain conditions are not met.</p></li>
-          </ul>
-        </li>
-        <li>
-          <p class="task-card__summary">Data types in the guards</p>
-          <ul>
-            <li><p class="task-card__summary">data: Allows you to associate custom static information with a route.</p></li>
-            <li><p class="task-card__summary">resolve: Allows you to obtain necessary data before a route is activated. Ensures that the information is available before displaying the associated component.</p></li>
-          </ul>
-        </li>
-      </ul>
-    }
-    @if (task().title === 'Reactive Forms') {
-      <span class="task-card__button-container">
-        <p class="task-card__actions">
-          <button
-            type="button"
-            class="task-card__button"
-            (click)="onShowSimpleForm()"
-            aria-label="Show simple form"
-          >
-            Click to show the simple form
-          </button>
-        </p>
-        <p class="task-card__actions">
-          <button
-            type="button"
-            class="task-card__button"
-            (click)="onShowComplexForm()"
-            aria-label="Show complex form"
-          >
-            Click to show the complex form
-          </button>
-        </p>
-      </span>
-      <span class="task-card__form-container">
-        @if (isShowingSimpleForm()) {<app-simple-form />}
-        @if (isShowingComplexForm()) {<app-complex-form />}
-      </span>
-    }
+    </span>
+    <span *ngIf="task().title === 'Routes'" class="task-card__form-container">
+      @if (isShowingSimpleForm()) {<app-simple-form />}
+      @if (isShowingComplexForm()) {<app-complex-form />}
+    </span>
+
   </article>
 </app-card>

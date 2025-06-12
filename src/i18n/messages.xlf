@@ -402,6 +402,314 @@
           <context context-type="linenumber">22,24</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="9190487815049892439" datatype="html">
+        <source>One-way: Interpolation uses:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="894513207262093212" datatype="html">
+        <source>One-way: Property binding uses: [src]=&quot;imageUrl&quot;</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7165379080603363969" datatype="html">
+        <source>One-way: Event binding uses: (click)=&quot;onClick()&quot;</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4582538316576886457" datatype="html">
+        <source>Two-way: Biding uses: [(ngModel)]=&quot;username&quot; </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6426466871815111255" datatype="html">
+        <source>Structural directives: Modify the structure of the DOM, adding or removing elements.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7027516499167647418" datatype="html">
+        <source>Attribute directives: Change the appearance or behavior of an element, such as modifying styles or attributes.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7960414806992125029" datatype="html">
+        <source>Components: These are directives with their own template, that is, they combine logic and view, and are the basis of any Angular application.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2264665873534436970" datatype="html">
+        <source> Example of a structural directive called &quot;*appAuth&quot; and an attribute directive called &quot;appSafeLink&quot;: <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;task-card__summary&quot; href=&quot;https://angular.dev/&quot; appSafeLink=&quot;/tutorials&quot;&gt;"/>Link to Angular site!<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">44,46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7294963043959136465" datatype="html">
+        <source>Example of the inbuild &quot;DatePipe&quot; and a custom pipe named &quot;temperature&quot; that can accept up to two configuration attributes:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="314778796491435564" datatype="html">
+        <source>Custom pipe:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8654449272029030088" datatype="html">
+        <source>In build pipe: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7028397428099327380" datatype="html">
+        <source>Angular has an Injector that manages dependencies declared as providers. If a component or service needs another class, Angular looks for that class in the injection tree, creates it (if necessary), and delivers it.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9127829430585081330" datatype="html">
+        <source>Any class marked with the @Injectable() decorator can be a dependency.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6859789862853201095" datatype="html">
+        <source>Angular allows you to control the scope of the injected instance:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3505353630656024856" datatype="html">
+        <source>providedIn: &apos;root&apos;: Global singleton, available throughout the application and Only one instance.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6318528481378482784" datatype="html">
+        <source>providedIn: &apos;platform&apos; (Advanced): Available across the entire platform, even beyond multiple Angular apps on the same page.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6004014692821726517" datatype="html">
+        <source>providedIn: &apos;any&apos;: A new instance for each lazy-loaded module and useful for isolating services between modules.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1421751354244096224" datatype="html">
+        <source>providedIn: &apos;self&apos; / SkipSelf (advanced): Controls which level of the Angular injector to resolve the dependency and used in conjunction with @Optional, @Self, @SkipSelf, etc.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7704070705172041156" datatype="html">
+        <source>In addition to providedIn, Angular also allows you to declare providers in various places: @Injectable( providedIn: &apos;root&apos; ), providers: [] in a component, providers: [] in a module and Injector.create()</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1183438240900858987" datatype="html">
+        <source>Manual or advanced injection: Injecting custom tokens, injecting values ​​(useValue), Injecting concrete classes (useClass) and Injecting factories (useFactory)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="570281015945920363" datatype="html">
+        <source>Observables are values on a stream of data and are great for managing events or streamed data.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9189713942379553472" datatype="html">
+        <source>Signals are values on a container and are great for managing the application state.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8490887774635491756" datatype="html">
+        <source>This is the example of a built-in observable:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="929269440923684771" datatype="html">
+        <source>This is the example of a custom observable by clicking the button:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6745095569106761428" datatype="html">
+        <source> Click to increment the signal converted into observable! </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">89,91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1412386368082129080" datatype="html">
+        <source>HTTP Requests in Angular allow your application to communicate with external servers to send or receive data, such as:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2090101393396045753" datatype="html">
+        <source>Retrieving information from a REST API, Submitting forms, Saving data to a database, Authentication, etc. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6161482364143000975" datatype="html">
+        <source>Types of HTTP Requests:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="843379177429879573" datatype="html">
+        <source>GET: Obtains data from the server. Used to read information, such as a list of users or products.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2427862975220992186" datatype="html">
+        <source>POST: Sends data to the server. Used to create new resources (for example, registering a user).</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1002280062061154536" datatype="html">
+        <source>PUT: Completely replaces an existing resource. Used when you want to update an entire object.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8909737070900425693" datatype="html">
+        <source>PATCH: Partially updates a resource. Use it when you only want to change some fields of the object.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7756457034408140449" datatype="html">
+        <source>DELETE: Deletes a resource from the server.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4436971840050202576" datatype="html">
+        <source> Click on me to learn more about HTTP requests with images! </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">122,124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2497353554994400836" datatype="html">
+        <source>Guards types</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8001717551884145048" datatype="html">
+        <source>CanMatch: Decides whether a route can be used by the router before it is even evaluated whether it can be activated or loaded.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7561902725722923047" datatype="html">
+        <source>CanActivate: Determines whether a route can be activated. This is useful for protecting routes that should only be accessible to authenticated users or those with certain permissions.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="127488077560643527" datatype="html">
+        <source>CanDeactivate: Controls whether a user can exit a route. The most typical example is unsaved data.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">133</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3520295264129162688" datatype="html">
+        <source>CanLoad: Prevents a lazy-loaded module from loading if certain conditions are not met.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">134</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2639804189799844670" datatype="html">
+        <source>Data types in the guards</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1247819250872798250" datatype="html">
+        <source>data: Allows you to associate custom static information with a route.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5269109426569340702" datatype="html">
+        <source>resolve: Allows you to obtain necessary data before a route is activated. Ensures that the information is available before displaying the associated component.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">141</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2113464333956785202" datatype="html">
+        <source> Click to show the simple form </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">154,156</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7130935991467726424" datatype="html">
+        <source> Click to show the complex form </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/components/task/task.component.html</context>
+          <context context-type="linenumber">165,167</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="513234570527737280" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ lessonName() }}"/>&apos;s Tasks</source>
         <context-group purpose="location">
