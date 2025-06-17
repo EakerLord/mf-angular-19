@@ -6,7 +6,8 @@ import { HeaderComponent } from "../components/header/header.component";
 import { LessonComponent } from "../components/lesson/lesson.component";
 import { ErrorModalComponent } from '../shared/modal-error/components/error/error-modal.component';
 import { ErrorService } from '../shared/modal-error/service/error.service';
-import { DUMMY_LESSONS } from "../assets/dummy-data"
+import { DUMMY_LESSONS_EN, DUMMY_LESSONS_ES } from "../assets/dummy-data"
+import { environment } from '../environments/environment';
 @Component({
   selector: 'app-root-angular-19',
   standalone: true,
@@ -16,7 +17,7 @@ import { DUMMY_LESSONS } from "../assets/dummy-data"
   hostDirectives: [] // Automatically applies directives from the array whenever the component is used.
 })
 export class AppComponent implements AfterViewInit {
-  lessons = DUMMY_LESSONS;
+  lessons = (environment.language === 'es') ? DUMMY_LESSONS_ES : DUMMY_LESSONS_EN;
   selectedLessonId? = '';
   errorService = inject(ErrorService);
   error = this.errorService.error;

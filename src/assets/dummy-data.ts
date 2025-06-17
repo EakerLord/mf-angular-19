@@ -1,4 +1,4 @@
-export const DUMMY_LESSONS = [
+export const DUMMY_LESSONS_EN = [
   {
     id: 'l1',
     name: 'Data biding',
@@ -40,8 +40,50 @@ export const DUMMY_LESSONS = [
     avatar: 'angular-logo.png',
   },
 ];
+export const DUMMY_LESSONS_ES = [
+  {
+    id: 'l1',
+    name: 'Enlace de datos',
+    avatar: 'angular-logo.png',
+  },
+  {
+    id: 'l2',
+    name: 'Directivas',
+    avatar: 'angular-logo.png',
+  },
+  {
+    id: 'l3',
+    name: 'Tuberias',
+    avatar: 'angular-logo.png',
+  },
+  {
+    id: 'l4',
+    name: 'Inyección de dependencias',
+    avatar: 'angular-logo.png',
+  },
+  {
+    id: 'l5',
+    name: 'Observables - RxJS',
+    avatar: 'rxjs.png',
+  },
+  {
+    id: 'l6',
+    name: 'Peticiones HTTP',
+    avatar: 'angular-logo.png',
+  },
+  {
+    id: 'l7',
+    name: 'Rutas',
+    avatar: 'angular-logo.png',
+  },
+  {
+    id: 'l8',
+    name: 'Formularios reactivos',
+    avatar: 'angular-logo.png',
+  },
+];
 
-export const DUMMY_TASKS = [
+export const DUMMY_TASKS_EN = [
   {
     id: 't1',
     lessonId: 'l1',
@@ -107,3 +149,69 @@ export const DUMMY_TASKS = [
     status: 'OPEN'
   },
 ]
+export const DUMMY_TASKS_ES = [
+  {
+    id: 't1',
+    lessonId: 'l1',
+    title: 'Enlace de datos',
+    summary: 'Es el mecanismo que permite sincronizar los datos entre el modelo (component.ts) y la vista (template.html):',
+    dueDate: '2025-12-31',
+    status: 'OPEN'
+  },
+  {
+    id: 't2',
+    lessonId: 'l2',
+    title: 'Directivas',
+    summary: 'Clases especiales que permiten modificar el comportamiento, apariencia o estructura de los elementos en el DOM de una aplicación.',
+    dueDate: '2025-12-31',
+    status: 'DONE'
+  },
+  {
+    id: 't3',
+    lessonId: 'l3',
+    title: 'Tuberias',
+    summary: 'Herramientas que permiten transformar y formatear datos directamente en las plantillas HTML, sin modificar el valor original en el componente.',
+    dueDate: '2025-12-31',
+    status: 'IN_PROGRESS'
+  },
+  {
+    id: 't4',
+    lessonId: 'l4',
+    title: 'Inyección de dependencias',
+    summary: 'Es un patrón de diseño que permite proporcionar automáticamente instancias de clases (dependencias) que otros objetos (como componentes o servicios) necesitan para funcionar, sin tener que crearlas directamente.',
+    dueDate: '2025-12-31',
+    status: 'OPEN'
+  },
+  {
+    id: 't5',
+    lessonId: 'l5',
+    title: 'RxJS',
+    summary: 'Información, comparaciones y ejemplos de RxJS, patrón observable:',
+    dueDate: '2025-12-31',
+    status: 'OPEN'
+  },
+  {
+    id: 't6',
+    lessonId: 'l6',
+    title: 'Peticiones HTTP',
+    summary: 'Información y ejemplos de peticiones HTTP, también con el patrón observable:',
+    dueDate: '2025-12-31',
+    status: 'OPEN'
+  },
+  {
+    id: 't7',
+    lessonId: 'l7',
+    title: 'Rutas',
+    summary: 'Información y ejemplos en código de enrutamiento y sus complementos:',
+    dueDate: '2025-12-31',
+    status: 'OPEN'
+  },
+  {
+    id: 't8',
+    lessonId: 'l8',
+    title: 'Formularios reactivos',
+    summary: 'Ejemplo práctico de un formulario con la implementación de: ngSubmit, ngModel, required, #XXXX="ngModel", renderizado condicional y clases condicionales:',
+    dueDate: '2025-12-31',
+    status: 'OPEN'
+  },
+];

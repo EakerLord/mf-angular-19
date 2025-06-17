@@ -2,7 +2,8 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, ResolveFn, Router, RouterLink, RouterOutlet, RouterStateSnapshot } from '@angular/router';
 import { TaskComponent } from "../task/task.component";
 import { TaskService } from '../../services/tasks/tasks.service';
-import { DUMMY_LESSONS } from "../../assets/dummy-data"
+import { DUMMY_LESSONS_EN, DUMMY_LESSONS_ES } from "../../assets/dummy-data"
+import { environment } from '../../environments/environment';
 import { filter } from 'rxjs';
 @Component({
   selector: 'app-tasks',
@@ -80,7 +81,8 @@ export class TasksComponent {
 // No subscription needed on ActivatedRouteSnapshot because of route it self.
 export const resolveLessonName: ResolveFn<string> = (activatedRoute: ActivatedRouteSnapshot, routerState: RouterStateSnapshot) => {
   const lessonId = activatedRoute.paramMap.get('lessonId');
-  return DUMMY_LESSONS.find(lesson => lesson.id === lessonId)?.name || '';
+  const dummyLesson = environment.language === 'es' ? DUMMY_LESSONS_ES : DUMMY_LESSONS_EN;
+  return dummyLesson.find(lesson => lesson.id === lessonId)?.name || '';
 };
 
 export const resolveTitle: ResolveFn<string> = (activatedRoute: ActivatedRouteSnapshot, routerState: RouterStateSnapshot) => {

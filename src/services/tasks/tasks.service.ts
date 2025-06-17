@@ -1,12 +1,15 @@
 import { Injectable, signal } from "@angular/core";
 import { NewTaskData, TaskStatus, Task } from "../../components/task/task.model";
-import { DUMMY_TASKS } from "../../assets/dummy-data";
+import { environment } from '../../environments/environment';
+import { DUMMY_TASKS_EN, DUMMY_TASKS_ES } from "../../assets/dummy-data";
 @Injectable({providedIn: 'root'})
 export class TaskService {
-  tasks = signal<Task[]>(DUMMY_TASKS);
+  tasks = signal<Task[]>([]);
   activePermission = signal<string>('guest');
 
   constructor() {
+    if (environment.language === 'es') { this.tasks.set(DUMMY_TASKS_ES) } else { this.tasks.set(DUMMY_TASKS_EN) };
+    (environment.language === 'es') ? console.log('Español') : console.log('English');
     const tasks = localStorage.getItem('tasks');
     if (tasks) { this.tasks.set(JSON.parse(tasks)) };
   }

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { TaskService } from './tasks.service';
-import { DUMMY_TASKS } from '../../assets/dummy-data';
+import { DUMMY_TASKS_EN } from '../../assets/dummy-data';
 import { TaskStatus } from '../../components/task/task.model';
 
 describe('TaskService', () => {
@@ -31,11 +31,11 @@ describe('TaskService', () => {
     it('should initialize with dummy tasks if no localStorage data', () => {
       mockLocalStorage.getItem.and.returnValue(null);
       const freshService = new TaskService();
-      expect(freshService.tasks()).toEqual(DUMMY_TASKS);
+      expect(freshService.tasks()).toEqual(DUMMY_TASKS_EN);
     });
 
     it('should load tasks from localStorage if available', () => {
-      const storedTasks = JSON.stringify([...DUMMY_TASKS, {
+      const storedTasks = JSON.stringify([...DUMMY_TASKS_EN, {
         id: '999',
         lessonId: 'math-1',
         title: 'Test Task',
@@ -46,7 +46,7 @@ describe('TaskService', () => {
 
       mockLocalStorage.getItem.and.returnValue(storedTasks);
       const freshService = new TaskService();
-      expect(freshService.tasks().length).toBe(DUMMY_TASKS.length + 1);
+      expect(freshService.tasks().length).toBe(DUMMY_TASKS_EN.length + 1);
     });
   });
 

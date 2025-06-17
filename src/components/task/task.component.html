@@ -28,14 +28,14 @@
     <time class="task-card__date">{{ task().dueDate | date:'fullDate'}}</time>
     <p class="task-card__summary">{{ task().summary }}</p>
 
-    <ul *ngIf="task().title === 'Data biding'">
+    <ul *ngIf="task().title === 'Data biding' || task().title === 'Enlace de datos'">
       <li><p i18n class="task-card__summary">One-way: Interpolation uses:</p><p class="task-card__summary" ngNonBindable> {{ expresion }}</p></li>
       <li><p i18n class="task-card__summary">One-way: Property binding uses: [src]="imageUrl"</p></li>
       <li><p i18n class="task-card__summary">One-way: Event binding uses: (click)="onClick()"</p></li>
       <li><p i18n class="task-card__summary">Two-way: Biding uses: [(ngModel)]="username" </p></li>
     </ul>
 
-    <ul *ngIf="task().title === 'Directives'">
+    <ul *ngIf="task().title === 'Directives' || task().title === 'Directivas'">
       <li><p i18n class="task-card__summary">Structural directives: Modify the structure of the DOM, adding or removing elements.</p></li>
       <li><p i18n class="task-card__summary">Attribute directives: Change the appearance or behavior of an element, such as modifying styles or attributes.</p></li>
       <li><p i18n class="task-card__summary">Components: These are directives with their own template, that is, they combine logic and view, and are the basis of any Angular application.</p></li>
@@ -49,7 +49,7 @@
       </li>
     </ul>
 
-    <ul *ngIf="task().title === 'Pipes'">
+    <ul *ngIf="task().title === 'Pipes' || task().title === 'Tuberias'">
       <li><p i18n class="task-card__summary">Example of the inbuild "DatePipe" and a custom pipe named "temperature" that can accept up to two configuration attributes:</p></li>
       <ul>
         <li><p i18n class="task-card__summary">Custom pipe:</p><p class="task-card__summary"> {{ temperature() | temperature:'cel':'fah' }} <|> {{ temperature() | temperature:'fah':'cel' }}</p></li>
@@ -57,7 +57,7 @@
       </ul>
     </ul>
 
-    <ul *ngIf="task().title === 'Dependency Injection'">
+    <ul *ngIf="task().title === 'Dependency Injection' || task().title === 'Inyección de dependencias'">
       <li><p i18n class="task-card__summary">Angular has an Injector that manages dependencies declared as providers. If a component or service needs another class, Angular looks for that class in the injection tree, creates it (if necessary), and delivers it.</p></li>
       <li><p i18n class="task-card__summary">Any class marked with the &#64;Injectable() decorator can be a dependency.</p></li>
       <li>
@@ -91,7 +91,7 @@
       </button>
     </p>
 
-    <ul *ngIf="task().title === 'HTTP Requests'">
+    <ul *ngIf="task().title === 'HTTP Requests' || task().title === 'Peticiones HTTP'">
       <li>
         <p i18n class="task-card__summary">HTTP Requests in Angular allow your application to communicate with external servers to send or receive data, such as:</p>
         <ul>
@@ -112,7 +112,7 @@
     @if (isAddingRequest()) {
       <app-new-request (close)="onCloseAddRequest()" />
     }
-    <p *ngIf="task().title === 'HTTP Requests'" class="task-card__actions">
+    <p *ngIf="task().title === 'HTTP Requests' || task().title === 'Peticiones HTTP'" class="task-card__actions">
       <button
         i18n
         type="button"
@@ -124,7 +124,7 @@
       </button>
     </p>
 
-    <ul *ngIf="task().title === 'Routes'">
+    <ul *ngIf="task().title === 'Routes' || task().title === 'Rutas'">
       <li>
         <p i18n class="task-card__summary">Guards types</p>
         <ul>
@@ -143,7 +143,7 @@
       </li>
     </ul>
 
-    <span *ngIf="task().title === 'Routes'" class="task-card__button-container">
+    <span *ngIf="task().title === 'Reactive Forms' || task().title === 'Formularios reactivos'" class="task-card__button-container">
       <p class="task-card__actions">
         <button
           i18n
@@ -167,7 +167,7 @@
         </button>
       </p>
     </span>
-    <span *ngIf="task().title === 'Routes'" class="task-card__form-container">
+    <span *ngIf="task().title === 'Reactive Forms' || task().title === 'Formularios reactivos'" class="task-card__form-container">
       @if (isShowingSimpleForm()) {<app-simple-form />}
       @if (isShowingComplexForm()) {<app-complex-form />}
     </span>

@@ -66,7 +66,13 @@
 						},
             "es": {
               "localize": ["es"],
-              "outputPath": "dist/mf-angular-19/es"
+              "outputPath": "dist/mf-angular-19/es",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.es.ts"
+                }
+              ]
             },
             "en": {
               "localize": ["en-US"],
